@@ -15,7 +15,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 public class FleshMassArmorRenderer extends GeoArmorRenderer<FleshMassArmorItem> {
     public FleshMassArmorRenderer() {
         super(new FleshMassArmorModel());
-        addRenderLayer(new AutoGlowingGeoLayer<>(FleshMassArmorRenderer.this));
     }
 
     String armorLeggingTorsoLayer = "armorLeggingTorsoLayer";

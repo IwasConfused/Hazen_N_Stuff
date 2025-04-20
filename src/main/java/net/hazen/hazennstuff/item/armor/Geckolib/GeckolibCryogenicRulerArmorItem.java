@@ -46,7 +46,7 @@ public class GeckolibCryogenicRulerArmorItem extends ImbuableGeckolibHnSArmorIte
 
     private void evaluateArmorEffects(Player player) {
         if (!player.hasEffect(HnSEffects.SUB_ZERO_EFFECT)) {
-            player.addEffect(new MobEffectInstance(HnSEffects.SUB_ZERO_EFFECT, 200, 0, false, false, true));
+            player.addEffect(new MobEffectInstance(HnSEffects.SUB_ZERO_EFFECT, 400, 0, false, false, true));
         }
     }
 

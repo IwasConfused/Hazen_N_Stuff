@@ -17,7 +17,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 public class CryogenicRulerArmorRenderer extends GeoArmorRenderer<CryogenicRulerArmorItem> {
     public CryogenicRulerArmorRenderer() {
         super(new CryogenicRulerArmorModel());
-        addRenderLayer(new AutoGlowingGeoLayer<>(CryogenicRulerArmorRenderer.this));
     }
 
     String armorLeggingTorsoLayer = "armorLeggingTorsoLayer";

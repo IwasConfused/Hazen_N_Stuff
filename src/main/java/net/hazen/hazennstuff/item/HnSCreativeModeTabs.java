@@ -111,6 +111,12 @@ public class HnSCreativeModeTabs {
                         output.accept(HnSItems.UTAU_CHESTPLATE.get());
                         output.accept(HnSItems.UTAU_LEGGINGS.get());
                         output.accept(HnSItems.UTAU_BOOTS.get());
+                        // Fireblossom
+                        output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_CROWN.get());
+                        output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_HELMET.get());
+                        output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_CHESTPLATE.get());
+                        output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_LEGGINGS.get());
+                        output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_BOOTS.get());
 
 
                         //Curios
@@ -121,6 +127,7 @@ public class HnSCreativeModeTabs {
 
                         //Weapons
                         output.accept(HnSItems.ICE_PIKE.get());
+                        output.accept(HnSItems.FIREBLOSSOM_RAPIER.get());
                     }).build());
 
 
