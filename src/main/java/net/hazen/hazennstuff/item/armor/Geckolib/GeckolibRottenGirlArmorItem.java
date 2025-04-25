@@ -5,7 +5,9 @@ import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.hazen.hazennstuff.effect.HnSEffects;
 import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibChargedScourgeArmorModel;
-import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibFireblossomBattlemageCrownedArmorModel;
+import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibFrierenArmorModel;
+import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibProjectSekaiArmorModel;
+import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibRottenGirlArmorModel;
 import net.hazen.hazennstuff.item.armor.HnSArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -18,14 +20,12 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
-public class GeckolibFireblossomBattlemageCrownedArmorItem extends ImbuableGeckolibHnSArmorItem {
-    public GeckolibFireblossomBattlemageCrownedArmorItem(Type type, Properties settings) {
+public class GeckolibRottenGirlArmorItem extends ImbuableGeckolibHnSArmorItem {
+    public GeckolibRottenGirlArmorItem(Type type, Properties settings) {
         // Add in your armor tier + additional attributes for your item
-        super(HnSArmorMaterials.FIREBLOSSOM_MATERIAL, type, settings,
+        super(HnSArmorMaterials.HATSUNE_MIKU_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .05, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE)
         );
     }
 
@@ -34,6 +34,6 @@ public class GeckolibFireblossomBattlemageCrownedArmorItem extends ImbuableGecko
     @Override
     @OnlyIn(Dist.CLIENT)
     public GeoArmorRenderer<?> supplyRenderer() {
-        return new GenericCustomArmorRenderer<>(new GeckolibFireblossomBattlemageCrownedArmorModel());
+        return new GenericCustomArmorRenderer<>(new GeckolibRottenGirlArmorModel());
     }
 }

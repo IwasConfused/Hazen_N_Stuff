@@ -1,0 +1,22 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "HAZEN_N_STUFF_RARITY_ICE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "net/hazen/hazennstuff/entity/render/rarities/IceRarity",
+        "field": "ICE_RARITY_PROXY"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "HAZEN_N_STUFF_RARITY_PURE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "net/hazen/hazennstuff/entity/render/rarities/PureRarity",
+        "field": "PURE_RARITY_PROXY"
+      }
+    }
+  ]
+}

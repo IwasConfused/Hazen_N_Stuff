@@ -22,7 +22,6 @@ public class IcePikeModel extends DefaultedItemGeoModel<IcePikeItem> {
 
     @Override
     public ResourceLocation getAnimationResource(IcePikeItem animatable) {
-        // Replace with your animation file
         return ResourceLocation.fromNamespaceAndPath(IronsSpellbooks.MODID, "animations/wizard_armor_animation.json");
     }
 }

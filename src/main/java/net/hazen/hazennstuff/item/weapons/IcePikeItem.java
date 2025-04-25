@@ -22,8 +22,12 @@ public class IcePikeItem extends MagicSwordItem implements GeoItem {
     public IcePikeItem() {
         super(
                 HNSExtendedWeaponTiers.ICE_PIKE,
-                ItemPropertiesHelper.equipment(1).fireResistant().rarity(Rarity.EPIC).attributes(ExtendedSwordItem.createAttributes(HNSExtendedWeaponTiers.ICE_PIKE)
-                ),
+                ItemPropertiesHelper
+                        .equipment(1)
+                        .fireResistant()
+                        .rarity(Rarity.EPIC)
+                        .attributes(ExtendedSwordItem.createAttributes(HNSExtendedWeaponTiers.ICE_PIKE)
+                        ),
                 SpellDataRegistryHolder.of(
                         new SpellDataRegistryHolder(SpellRegistry.FROSTWAVE_SPELL, 6))
         );
@@ -31,10 +35,6 @@ public class IcePikeItem extends MagicSwordItem implements GeoItem {
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-        // Leave this empty if you don't want animations
-        // If you do, uncomment the following code for a basic idle animation
-        // You can get crazy with these with triggers, but try something simple for now
-
         //controllerRegistrar.add(animationController);
     }
 

@@ -119,6 +119,18 @@ public class HnSEffects {
                             ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "grand_ender_dragon"), 1f,
                             AttributeModifier.Operation.ADD_VALUE));
 
+    public static final Holder<MobEffect> FIREBLOSSOM_EFFECT = MOB_EFFECTS.register("fireblossom",
+            () -> new TyrantsGraceEffect(MobEffectCategory.BENEFICIAL, 0xfbb741)
+                    .addAttributeModifier(AttributeRegistry.CASTING_MOVESPEED,
+                            ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "fireblossom"), 0.15f,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(AttributeRegistry.SPELL_RESIST,
+                            ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "fireblossom"), 0.1f,
+                            AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+                    .addAttributeModifier(ALObjects.Attributes.ELYTRA_FLIGHT,
+                            ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "fireblossom"), 1f,
+                            AttributeModifier.Operation.ADD_VALUE));
+
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);
     }

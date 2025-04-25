@@ -55,7 +55,7 @@ public class HnSBlocks {
                     .Properties.of()
                     .strength(4f)
                     .requiresCorrectToolForDrops()
-                    .sound(SoundType.COPPER_GRATE)
+                    .sound(SoundType.NETHERITE_BLOCK)
             ));
 
     public static final DeferredBlock<Block> ABYSSLATE = registerBlock("abysslate",
@@ -93,17 +93,59 @@ public class HnSBlocks {
                             .sound(SoundType.WOOD)
             ));
 
+    public static final DeferredBlock<StairBlock> WISEWOOD_STAIRS = registerBlock("wisewood_stairs",
+            () -> new StairBlock(HnSBlocks.WISEWOOD_PLANK.get().defaultBlockState(),
+                    BlockBehaviour
+                            .Properties
+                            .of()
+                            .strength(2f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.WOOD)
+            ));
+
+    public static final DeferredBlock<SlabBlock> WISEWOOD_SLAB = registerBlock("wisewood_slab",
+            () -> new SlabBlock(
+                    BlockBehaviour
+                            .Properties
+                            .of()
+                            .strength(2f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.WOOD)
+            ));
+
     public static final DeferredBlock<Block> WISEWOOD_LOG = registerBlock("wisewood_log",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+            () -> new ModFlammableRotatedPillarBlock(
+                    BlockBehaviour
+                            .Properties
+                            .ofFullCopy(Blocks.OAK_LOG)
+            ));
+
     public static final DeferredBlock<Block> WISEWOOD_WOOD = registerBlock("wisewood_wood",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
+            () -> new ModFlammableRotatedPillarBlock(
+                    BlockBehaviour
+                            .Properties
+                            .ofFullCopy(Blocks.OAK_WOOD)
+            ));
+
     public static final DeferredBlock<Block> STRIPPED_WISEWOOD_LOG = registerBlock("stripped_wisewood_log",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+            () -> new ModFlammableRotatedPillarBlock(
+                    BlockBehaviour
+                            .Properties
+                            .ofFullCopy(Blocks.STRIPPED_OAK_LOG)
+            ));
+
     public static final DeferredBlock<Block> STRIPPED_WISEWOOD_WOOD = registerBlock("stripped_wisewood_wood",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
+            () -> new ModFlammableRotatedPillarBlock(
+                    BlockBehaviour
+                            .Properties
+                            .ofFullCopy(Blocks.STRIPPED_OAK_WOOD)
+            ));
 
     public static final DeferredBlock<Block> WISEWOOD_LEAVES = registerBlock("wisewood_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)) {
+            () -> new LeavesBlock(
+                    BlockBehaviour
+                            .Properties
+                            .ofFullCopy(Blocks.OAK_LEAVES)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -120,18 +162,18 @@ public class HnSBlocks {
                 }
             });
 
-    public static final DeferredBlock<Block> FIREBLOSSOM = registerBlock("fireblossom",
-            () -> new FlowerBlock(MobEffects.FIRE_RESISTANCE, 5.0F, BlockBehaviour
-                    .Properties.of()
-                    .mapColor(MapColor.PLANT)
+    public static final DeferredBlock<Block> FIREBLOSSOM = registerBlock("fireblossom", () -> new RootsBlock(
+            BlockBehaviour
+                    .Properties
+                    .of()
+                    .mapColor(MapColor.NETHER)
+                    .replaceable()
                     .noCollission()
                     .instabreak()
-                    .sound(SoundType.GRASS)
+                    .sound(SoundType.FLOWERING_AZALEA)
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)
             ));
-
-
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

@@ -92,6 +92,6 @@
     }
   },
   "textures": {
-    "particle": "item/ice_pike"
+    "particle": "item/weapons/ice_pike/ice_pike"
   }
 }

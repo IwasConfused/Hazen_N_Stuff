@@ -5,6 +5,7 @@ import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import net.hazen.hazennstuff.effect.HnSEffects;
 import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibChargedScourgeArmorModel;
+import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibFireblossomBattlemageCrownedArmorModel;
 import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibFireblossomBattlemageHelmetArmorModel;
 import net.hazen.hazennstuff.item.armor.HnSArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -25,7 +26,6 @@ public class GeckolibFireblossomBattlemageHelmetArmorItem extends ImbuableGeckol
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, .05, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.SPELL_POWER, .05, AttributeModifier.Operation.ADD_VALUE)
         );
     }

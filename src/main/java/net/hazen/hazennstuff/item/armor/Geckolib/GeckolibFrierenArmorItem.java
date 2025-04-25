@@ -34,24 +34,4 @@ public class GeckolibFrierenArmorItem extends ImbuableGeckolibHnSArmorItem {
     public GeoArmorRenderer<?> supplyRenderer() {
         return new GenericCustomArmorRenderer<>(new GeckolibFrierenArmorModel());
     }
-
-    @Override
-    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        if (entity instanceof Player player && !level.isClientSide() && isWearingFullSet(player)) {
-            evaluateArmorEffects(player);
-        }
-    }
-
-    private void evaluateArmorEffects(Player player) {
-        if (!player.hasEffect(HnSEffects.SCOURGES_GORGE_EFFECT)) {
-            player.addEffect(new MobEffectInstance(HnSEffects.SCOURGES_GORGE_EFFECT, 200, 0, false, false, true));
-        }
-    }
-
-    private boolean isWearingFullSet(Player player) {
-        return player.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof GeckolibChargedScourgeArmorItem &&
-                player.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof GeckolibChargedScourgeArmorItem &&
-                player.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof GeckolibChargedScourgeArmorItem &&
-                player.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof GeckolibChargedScourgeArmorItem;
-    }
 }

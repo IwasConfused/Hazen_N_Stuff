@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
   "textures": {
-    "particle": "hazennstuff:block/fireblossom",
     "cross": "hazennstuff:block/fireblossom"
   }
 }
