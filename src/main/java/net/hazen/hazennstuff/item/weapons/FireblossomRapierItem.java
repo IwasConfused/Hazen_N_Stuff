@@ -29,7 +29,8 @@ public class FireblossomRapierItem extends MagicSwordItem implements GeoItem {
                         .attributes(ExtendedSwordItem.createAttributes(HNSExtendedWeaponTiers.FIREBLOSSOM_RAPIER)
                 ),
                 SpellDataRegistryHolder.of(
-                        new SpellDataRegistryHolder(SpellRegistry.FLAMING_STRIKE_SPELL, 6))
+                        new SpellDataRegistryHolder(SpellRegistry.FLAMING_STRIKE_SPELL, 6)
+                )
         );
     }
 

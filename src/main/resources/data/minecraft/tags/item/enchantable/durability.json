@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#minecraft:enchantable/armor",
-    "#minecraft:enchantable/mace"
+    "#minecraft:enchantable/armor"
   ]
 }

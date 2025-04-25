@@ -29,7 +29,8 @@ public class IcePikeItem extends MagicSwordItem implements GeoItem {
                         .attributes(ExtendedSwordItem.createAttributes(HNSExtendedWeaponTiers.ICE_PIKE)
                         ),
                 SpellDataRegistryHolder.of(
-                        new SpellDataRegistryHolder(SpellRegistry.FROSTWAVE_SPELL, 6))
+                        new SpellDataRegistryHolder(SpellRegistry.ICE_SPIKES_SPELL, 10)
+                )
         );
     }
 

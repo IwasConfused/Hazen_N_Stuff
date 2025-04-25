@@ -31,6 +31,8 @@ public class HnSItems {
     //Materials
     public static final DeferredItem<Item> ZENALITE_INGOT = ITEMS.register("zenalite_ingot",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> SILVER_SCRAPS = ITEMS.register("silver_scraps",
+            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> RAWZENALITE = ITEMS.register("raw_zenalite",
             () -> new Item(new Item.Properties()));
