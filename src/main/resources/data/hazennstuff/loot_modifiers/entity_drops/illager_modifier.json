@@ -8,5 +8,5 @@
       "minecraft:entities/vindicator"
     }
   ],
-  "key": "irons_spellbooks:entities/additional_stray_loot"
+  "key": "hazennstuff:entities/additional_illager_loot"
 }
