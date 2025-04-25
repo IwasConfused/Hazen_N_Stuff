@@ -4,6 +4,8 @@ import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
 import io.redspace.ironsspellbooks.api.item.weapons.MagicSwordItem;
 import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
+import io.redspace.ironsspellbooks.item.weapons.StaffItem;
+import io.redspace.ironsspellbooks.item.weapons.StaffTier;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.hazennstuff.HazenNStuff;
 import net.hazen.hazennstuff.item.armor.*;
@@ -46,6 +48,9 @@ public class HnSItems {
 
     public static final DeferredHolder<Item, Item> FIREBLOSSOM_RAPIER = ITEMS.register("fireblossom_rapier", FireblossomRapierItem::new);
 
+    //Staves
+
+    public static final DeferredHolder<Item, Item> WISEWOOD_CANE = ITEMS.register("wisewood_cane", () -> new StaffItem(ItemPropertiesHelper.equipment(1).attributes(ExtendedSwordItem.createAttributes(StaffTier.WISEWOOD_CANE))));
 
     //Curios
     public static final DeferredItem<RupturedCurio> RUPTURED = ITEMS.register("ruptured", RupturedCurio::new);
