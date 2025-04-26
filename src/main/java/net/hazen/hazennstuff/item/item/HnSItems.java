@@ -50,7 +50,6 @@ public class HnSItems {
 
     //Staves
 
-    public static final DeferredHolder<Item, Item> WISEWOOD_CANE = ITEMS.register("wisewood_cane", () -> new StaffItem(ItemPropertiesHelper.equipment(1).attributes(ExtendedSwordItem.createAttributes(StaffTier.WISEWOOD_CANE))));
 
     //Curios
     public static final DeferredItem<RupturedCurio> RUPTURED = ITEMS.register("ruptured", RupturedCurio::new);
