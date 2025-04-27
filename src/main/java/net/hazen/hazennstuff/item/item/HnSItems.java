@@ -11,6 +11,7 @@ import net.hazen.hazennstuff.HazenNStuff;
 import net.hazen.hazennstuff.item.armor.*;
 import net.hazen.hazennstuff.item.armor.Geckolib.*;
 import net.hazen.hazennstuff.item.curios.*;
+import net.hazen.hazennstuff.item.staves.FrierenStaffItem;
 import net.hazen.hazennstuff.item.weapons.FireblossomRapierItem;
 import net.hazen.hazennstuff.item.weapons.HNSExtendedWeaponTiers;
 import net.hazen.hazennstuff.item.weapons.IcePikeItem;
@@ -49,7 +50,7 @@ public class HnSItems {
     public static final DeferredHolder<Item, Item> FIREBLOSSOM_RAPIER = ITEMS.register("fireblossom_rapier", FireblossomRapierItem::new);
 
     //Staves
-
+    public static final DeferredHolder<Item, Item> FRIEREN_STAFF = ITEMS.register("frieren_staff", FrierenStaffItem::new);
 
     //Curios
     public static final DeferredItem<RupturedCurio> RUPTURED = ITEMS.register("ruptured", RupturedCurio::new);

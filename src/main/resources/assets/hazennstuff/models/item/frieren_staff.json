@@ -1,0 +1,102 @@
+{
+  "credit": "Made by Hazen",
+  "parent": "builtin/entity",
+  "texture_size": [
+    64,
+    64
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "translation": [
+        0,
+        -16,
+        0
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        -90,
+        0
+      ],
+      "translation": [
+        0,
+        -16,
+        0
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -16,
+        130,
+        3
+      ],
+      "translation": [
+        6.25,
+        -16,
+        0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -16,
+        130,
+        -3
+      ],
+      "translation": [
+        6.25,
+        -16,
+        0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    "gui": {
+      "rotation": [
+        0,
+        -180,
+        45
+      ],
+      "translation": [
+        -7,
+        -7.25,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "head": {
+      "translation": [
+        0,
+        -19.25,
+        0
+      ]
+    },
+    "fixed": {
+      "translation": [
+        0,
+        -25,
+        0
+      ]
+    }
+  },
+  "textures": {
+    "particle": "item/frieren_staff_reprised"
+  }
+}
