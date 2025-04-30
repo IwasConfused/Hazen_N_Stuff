@@ -6,12 +6,14 @@ import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.item.weapons.StaffItem;
 import io.redspace.ironsspellbooks.item.weapons.StaffTier;
+import io.redspace.ironsspellbooks.render.CinderousRarity;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.hazennstuff.HazenNStuff;
 import net.hazen.hazennstuff.item.armor.*;
 import net.hazen.hazennstuff.item.armor.Geckolib.*;
 import net.hazen.hazennstuff.item.curios.*;
-import net.hazen.hazennstuff.item.staves.FrierenStaffItem;
+import net.hazen.hazennstuff.item.staves.HnSStaffTier;
+import net.hazen.hazennstuff.item.weapons.BeongaeItem;
 import net.hazen.hazennstuff.item.weapons.FireblossomRapierItem;
 import net.hazen.hazennstuff.item.weapons.HNSExtendedWeaponTiers;
 import net.hazen.hazennstuff.item.weapons.IcePikeItem;
@@ -49,8 +51,10 @@ public class HnSItems {
 
     public static final DeferredHolder<Item, Item> FIREBLOSSOM_RAPIER = ITEMS.register("fireblossom_rapier", FireblossomRapierItem::new);
 
+    public static final DeferredHolder<Item, Item> BEONGAE = ITEMS.register("beongae", BeongaeItem::new);
+
     //Staves
-    public static final DeferredHolder<Item, Item> FRIEREN_STAFF = ITEMS.register("frieren_staff", FrierenStaffItem::new);
+    public static final DeferredHolder<Item, Item> FRIEREN_STAFF = ITEMS.register("frieren_staff", () -> new StaffItem(ItemPropertiesHelper.equipment(1).fireResistant().rarity(Rarity.RARE).attributes(ExtendedSwordItem.createAttributes(HnSStaffTier.FRIEREN_STAFF))));
 
     //Curios
     public static final DeferredItem<RupturedCurio> RUPTURED = ITEMS.register("ruptured", RupturedCurio::new);
@@ -161,10 +165,10 @@ public class HnSItems {
 
     //Legionnaire Armor
 
-    public static final DeferredHolder<Item, Item> LEGIONNAIRE_HELMET = ITEMS.register("legionnaire_helmet", () -> new GeckolibLegionnaireArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment(1).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(64))));
-    public static final DeferredHolder<Item, Item> LEGIONNAIRE_CHESTPLATE = ITEMS.register("legionnaire_chestplate", () -> new GeckolibLegionnaireArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper.equipment(1).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(64))));
-    public static final DeferredHolder<Item, Item> LEGIONNAIRE_LEGGINGS = ITEMS.register("legionnaire_leggings", () -> new GeckolibLegionnaireArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper.equipment(1).fireResistant().durability(ArmorItem.Type.LEGGINGS.getDurability(64))));
-    public static final DeferredHolder<Item, Item> LEGIONNAIRE_BOOTS = ITEMS.register("legionnaire_boots", () -> new GeckolibLegionnaireArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper.equipment(1).fireResistant().durability(ArmorItem.Type.BOOTS.getDurability(64))));
+    public static final DeferredHolder<Item, Item> LEGIONNAIRE_HELMET = ITEMS.register("legionnaire_helmet", () -> new GeckolibLegionnaireArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment(1).rarity(CinderousRarity.CINDEROUS_RARITY_PROXY.getValue()).fireResistant().durability(ArmorItem.Type.HELMET.getDurability(64))));
+    public static final DeferredHolder<Item, Item> LEGIONNAIRE_CHESTPLATE = ITEMS.register("legionnaire_chestplate", () -> new GeckolibLegionnaireArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper.equipment(1).rarity(CinderousRarity.CINDEROUS_RARITY_PROXY.getValue()).fireResistant().durability(ArmorItem.Type.CHESTPLATE.getDurability(64))));
+    public static final DeferredHolder<Item, Item> LEGIONNAIRE_LEGGINGS = ITEMS.register("legionnaire_leggings", () -> new GeckolibLegionnaireArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper.equipment(1).fireResistant().rarity(CinderousRarity.CINDEROUS_RARITY_PROXY.getValue()).durability(ArmorItem.Type.LEGGINGS.getDurability(64))));
+    public static final DeferredHolder<Item, Item> LEGIONNAIRE_BOOTS = ITEMS.register("legionnaire_boots", () -> new GeckolibLegionnaireArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper.equipment(1).fireResistant().rarity(CinderousRarity.CINDEROUS_RARITY_PROXY.getValue()).durability(ArmorItem.Type.BOOTS.getDurability(64))));
 
     //Synthesizer V Armor
 

@@ -6,11 +6,11 @@ import io.redspace.ironsspellbooks.item.weapons.IronsWeaponTier;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 
 public class HnSStaffTier implements IronsWeaponTier {
-    // Staff of Ascension
+    // Frieren Staff
     public static HnSStaffTier FRIEREN_STAFF = new HnSStaffTier(3, -3,
-            new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, 0.10f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.CAST_TIME_REDUCTION, 0.25f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, 0.15f, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+            new AttributeContainer(AttributeRegistry.CAST_TIME_REDUCTION, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.SPELL_POWER, .10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
     );
 
     float damage;

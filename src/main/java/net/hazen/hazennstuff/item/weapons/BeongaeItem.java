@@ -1,4 +1,4 @@
-package net.hazen.hazennstuff.item.staves;
+package net.hazen.hazennstuff.item.weapons;
 
 import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
 import io.redspace.ironsspellbooks.api.item.weapons.MagicSwordItem;
@@ -6,9 +6,7 @@ import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.hazennstuff.entity.render.item.BeongaeRenderer;
-import net.hazen.hazennstuff.entity.render.item.FrierenStaffRenderer;
-import net.hazen.hazennstuff.item.staves.HnSStaffTier;
-import net.hazen.hazennstuff.item.staves.ImbuableStaffItem;
+import net.hazen.hazennstuff.entity.render.item.FireblossomRapierRenderer;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.Rarity;
 import software.bernie.geckolib.animatable.GeoItem;
@@ -19,13 +17,21 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
 
-public class FrierenStaffItem extends ImbuableStaffItem implements GeoItem {
+public class BeongaeItem extends MagicSwordItem implements GeoItem {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    public FrierenStaffItem() {
+    public BeongaeItem() {
         super(
-                ItemPropertiesHelper.equipment(1).fireResistant().rarity(Rarity.EPIC).attributes(ExtendedSwordItem.createAttributes(HnSStaffTier.FRIEREN_STAFF)),
-                SpellDataRegistryHolder.of()
+                HNSExtendedWeaponTiers.BEONGAE,
+                ItemPropertiesHelper
+                        .equipment(1)
+                        .fireResistant()
+                        .rarity(Rarity.EPIC)
+                        .attributes(ExtendedSwordItem.createAttributes(HNSExtendedWeaponTiers.BEONGAE)
+                        ),
+                SpellDataRegistryHolder.of(
+                        new SpellDataRegistryHolder(SpellRegistry.SHOCKWAVE_SPELL, 12)
+                )
         );
     }
 
@@ -37,10 +43,10 @@ public class FrierenStaffItem extends ImbuableStaffItem implements GeoItem {
     // Animations and stuff
     private static final RawAnimation IDLE_ANIMATION = RawAnimation.begin().thenLoop("idle");
 
-    private final AnimationController<FrierenStaffItem> animationController = new AnimationController<>(this, "controller", 0, this::predicate);
+    private final AnimationController<BeongaeItem> animationController = new AnimationController<>(this, "controller", 0, this::predicate);
 
     // Make your animations in this predicate
-    private PlayState predicate(AnimationState<FrierenStaffItem> event)
+    private PlayState predicate(AnimationState<BeongaeItem> event)
     {
         event.getController().setAnimation(IDLE_ANIMATION);
 
@@ -56,12 +62,12 @@ public class FrierenStaffItem extends ImbuableStaffItem implements GeoItem {
     @Override
     public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
         consumer.accept(new GeoRenderProvider() {
-            private FrierenStaffRenderer renderer;
+            private BeongaeRenderer renderer;
 
             @Override
             public BlockEntityWithoutLevelRenderer getGeoItemRenderer() {
                 if (this.renderer == null)
-                    this.renderer = new FrierenStaffRenderer();
+                    this.renderer = new BeongaeRenderer();
 
                 return this.renderer;
             }

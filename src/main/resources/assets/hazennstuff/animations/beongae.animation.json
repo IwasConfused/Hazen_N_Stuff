@@ -4,18 +4,15 @@
 	"animations": {
 		"idle": {
 			"loop": true,
-			"animation_length": 2,
+			"animation_length": 3,
 			"bones": {
-				"ribbon": {
+				"balls": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
-						"1.0": {
-							"vector": [-2.5, 0, 0]
-						},
-						"2.0": {
-							"vector": [0, 0, 0]
+						"3.0": {
+							"vector": [0, -4747.5, 0]
 						}
 					}
 				}
