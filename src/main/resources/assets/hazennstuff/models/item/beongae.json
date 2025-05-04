@@ -1,5 +1,5 @@
 {
-  "credit": "Made by Hazen",
+  "credit": "Made with Blockbench",
   "parent": "builtin/entity",
   "texture_size": [
     32,
@@ -33,24 +33,24 @@
     "firstperson_righthand": {
       "rotation": [
         0,
-        115,
+        90,
         -17
       ],
       "translation": [
-        2,
-        2.5,
+        4.5,
+        -4.75,
         0
       ]
     },
     "firstperson_lefthand": {
       "rotation": [
         0,
-        -65,
+        -90,
         17
       ],
       "translation": [
-        2,
-        2.5,
+        4.5,
+        -4.75,
         0
       ]
     },

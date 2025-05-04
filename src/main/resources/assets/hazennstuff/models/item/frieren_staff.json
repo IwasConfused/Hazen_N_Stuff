@@ -1,5 +1,5 @@
 {
-  "credit": "Made by Hazen",
+  "credit": "Made with Blockbench",
   "parent": "builtin/entity",
   "texture_size": [
     64,
@@ -14,8 +14,13 @@
       ],
       "translation": [
         0,
-        -16,
+        -11.25,
         0
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
       ]
     },
     "thirdperson_lefthand": {
@@ -26,53 +31,75 @@
       ],
       "translation": [
         0,
-        -16,
+        -11.25,
         0
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
       ]
     },
     "firstperson_righthand": {
       "rotation": [
-        -16,
+        -17,
         130,
         3
       ],
       "translation": [
-        6.25,
-        -16,
+        4.25,
+        -12,
         0
       ],
       "scale": [
-        0.8,
-        0.8,
-        0.8
+        0.75,
+        0.75,
+        0.75
       ]
     },
     "firstperson_lefthand": {
       "rotation": [
-        -16,
-        130,
-        -3
+        -17,
+        -70,
+        3
       ],
       "translation": [
-        6.25,
-        -16,
+        4.25,
+        -12,
         0
       ],
       "scale": [
-        0.8,
-        0.8,
-        0.8
+        0.75,
+        0.75,
+        0.75
+      ]
+    },
+    "ground": {
+      "rotation": [
+        -90,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        13.25
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
       ]
     },
     "gui": {
       "rotation": [
         0,
-        -180,
+        180,
         45
       ],
       "translation": [
-        -7,
-        -7.25,
+        -7.75,
+        -7.75,
         0
       ],
       "scale": [
@@ -84,19 +111,19 @@
     "head": {
       "translation": [
         0,
-        -19.25,
+        -19,
         0
       ]
     },
     "fixed": {
       "translation": [
         0,
-        -25,
+        -23.5,
         0
       ]
     }
   },
   "textures": {
-    "particle": "item/frieren_staff_reprised"
+    "particle": "item/frieren_staff"
   }
 }

@@ -99,27 +99,7 @@ public class HazenNStuff
     // You don't need this btw, remove it when you want to
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
-            event.accept(HnSItems.ZENALITE_INGOT);
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
-            event.accept(HnSItems.RAWZENALITE);
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
-            event.accept(HnSItems.STARKISSEDZENALITE);
 
-        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
-            event.accept (HnSBlocks.ZENALITE_ABYSSLATE_ORE);
-        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
-            event.accept (HnSBlocks.ZENALITE_BRICKS);
-        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
-            event.accept (HnSBlocks.PHANTASMIUM);
-        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
-            event.accept (HnSBlocks.BLOCK_OF_ZENALITE);
-        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
-            event.accept (HnSBlocks.ABYSSLATE);
-        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
-            event.accept (HnSBlocks.ZENALITE_DEEPSLATE_ORE);
-        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
-            event.accept (HnSBlocks.ZENALITE_STONE_ORE);
 
 
         /*if (event.getTabKey() == CreativeModeTabs.COMBAT)

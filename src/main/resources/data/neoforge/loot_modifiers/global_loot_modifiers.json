@@ -1,6 +1,7 @@
 {
   "replace": false,
   "entries": [
-    "hazennstuff:entity_drops/illager_modifiers"
+    "hazennstuff:entity_drops/illager_modifiers",
+    "hazennstuff:entity_drops/dead_king_modifiers"
   ]
 }

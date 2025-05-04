@@ -5,9 +5,9 @@
   "experience": 1.0,
   "group": "zenalite",
   "ingredient": {
-    "tag": "hazennstuff:zenalite_ores"
+    "tag": "hazennstuff:zenalite_ore"
   },
   "result": {
-    "id": "hazennstuff:zenalite"
+    "id": "hazennstuff:zenalite_ingot"
   }
 }

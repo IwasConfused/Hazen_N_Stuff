@@ -26,6 +26,9 @@ public class HnSCreativeModeTabs {
                         output.accept(HnSItems.RAWZENALITE);
                         output.accept(HnSItems.STARKISSEDZENALITE);
                         output.accept(HnSItems.DIVINE_MOLD);
+                        output.accept(HnSItems.SILVER_SCRAPS);
+                        output.accept(HnSItems.EXCALIBUR_FRAGMENT);
+                        output.accept(HnSItems.DIVINE_MOLD);
                         output.accept(HnSBlocks.FIREBLOSSOM);
                     }).build());
 
@@ -33,13 +36,39 @@ public class HnSCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(HnSBlocks.ZENALITE_ABYSSLATE_ORE.get()))
                     .title(Component.translatable("creativetab.hazennstuff.hazennstuff_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(HnSBlocks.BLOCK_OF_ZENALITE);
+
+                        //Compact Blocks
+                        output.accept(HnSBlocks.ZENALITE_BLOCK);
+                        output.accept(HnSBlocks.PYRIUM_BLOCK);
+                        output.accept(HnSBlocks.MITHRIL_BLOCK);
+                        output.accept(HnSBlocks.ARCANE_STEEL_BLOCK);
+
+
+                        //Zenalite Set
                         output.accept(HnSBlocks.ZENALITE_BRICKS);
+                        output.accept(HnSBlocks.ZENALITE_SLAB);
+                        output.accept(HnSBlocks.ZENALITE_STAIRS);
+
+
+                        //Ore
                         output.accept(HnSBlocks.ZENALITE_DEEPSLATE_ORE);
                         output.accept(HnSBlocks.ZENALITE_STONE_ORE);
                         output.accept(HnSBlocks.ZENALITE_ABYSSLATE_ORE);
+                        output.accept(HnSBlocks.ZENALITE_VOIDSTONE_ORE);
+
+                        //Overworld Blocks
+                        output.accept(HnSBlocks.RUNESTONE_SLAG);
+                        output.accept(HnSBlocks.AQUASTONE);
+
+                        //Nether Blocks
+
+                        //End Blocks
                         output.accept(HnSBlocks.ABYSSLATE);
                         output.accept(HnSBlocks.PHANTASMIUM);
+                        output.accept(HnSBlocks.COBBLED_VOIDSTONE);
+                        output.accept(HnSBlocks.VOIDSTONE);
+
+                        //Wisewood Set
                         output.accept(HnSBlocks.WISEWOOD_PLANK);
                         output.accept(HnSBlocks.WISEWOOD_SLAB);
                         output.accept(HnSBlocks.WISEWOOD_STAIRS);
@@ -136,22 +165,8 @@ public class HnSCreativeModeTabs {
                         output.accept(HnSItems.FIREBLOSSOM_BATTLEMAGE_BOOTS.get());
 
 
-                        //Curios
-                        output.accept(HnSItems.RUPTURED.get());
-                        output.accept(HnSItems.REFINED.get());
-                        output.accept(HnSItems.REINFORCED.get());
-                        output.accept(HnSItems.RADIANCE.get());
+                        //Geckolib
 
-                        //Weapons
-                        output.accept(HnSItems.ICE_PIKE.get());
-                        output.accept(HnSItems.FIREBLOSSOM_RAPIER.get());
-                    }).build());
-
-    public static final Supplier<CreativeModeTab> HAZEN_N_STUFF_GECKOLIB_EQUIPMENT = CREATIVE_MODE_TAB.register("hazennstuff_geckolib_equipment",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(HnSItems.RADIANCE.get()))
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "hazennstuff_equipment"))
-                    .title(Component.translatable("creativetab.hazennstuff.hazennstuff_geckolib_equipment"))
-                    .displayItems((itemDisplayParameters, output) -> {
                         // Creaking
                         output.accept(HnSItems.GECKOLIB_CREAKING_HELMET.get());
                         output.accept(HnSItems.GECKOLIB_CREAKING_CHESTPLATE.get());
@@ -203,6 +218,45 @@ public class HnSCreativeModeTabs {
                         output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_CHESTPLATE.get());
                         output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_LEGGINGS.get());
                         output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_BOOTS.get());
+
+
+
+                    }).build());
+
+    public static final Supplier<CreativeModeTab> HAZEN_N_STUFF_WEAPONS = CREATIVE_MODE_TAB.register("hazennstuff_utility",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(HnSItems.RADIANCE.get()))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "hazennstuff_equipment"))
+                    .title(Component.translatable("creativetab.hazennstuff.hazennstuff_equipment"))
+                    .displayItems((itemDisplayParameters, output) -> {
+
+                        //Weapons
+
+
+                        //Fireblossom Rapier
+                        output.accept(HnSItems.FIREBLOSSOM_RAPIER.get());
+                        //Beongae
+                        output.accept(HnSItems.BEONGAE.get());
+                        //Ancient Warriors Axe
+                        output.accept(HnSItems.ANCIENT_WARRIORS_AXE.get());
+                        //Ice Pike
+                        output.accept(HnSItems.ICE_PIKE.get());
+
+
+                        //Staves
+
+                        //Wisewood Cane
+                        output.accept(HnSItems.WISEWOOD_CANE.get());
+                        //Frieren Staff
+                        output.accept(HnSItems.FRIEREN_STAFF.get());
+
+
+                        //Curios
+                        output.accept(HnSItems.RUPTURED.get());
+                        output.accept(HnSItems.REFINED.get());
+                        output.accept(HnSItems.REINFORCED.get());
+                        output.accept(HnSItems.RADIANCE.get());
+
+
                     }).build());
 
 

@@ -25,39 +25,42 @@ public class HnSBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(HazenNStuff.MOD_ID);
 
-    public static final DeferredBlock<Block> ZENALITE_ABYSSLATE_ORE = registerBlock("zenalite_abysslate_ore",
-            () -> new DropExperienceBlock(UniformInt.of(2, 4),
+
+    //Overworld Blocks
+
+    public static final DeferredBlock<Block> RUNESTONE_SLAG = registerBlock("runestone_slag",
+            () -> new Block(BlockBehaviour
+                    .Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.ANCIENT_DEBRIS)
+            ));
+    public static final DeferredBlock<Block> AQUASTONE = registerBlock("aquastone",
+            () -> new Block(BlockBehaviour
+                    .Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.ANCIENT_DEBRIS)
+            ));
+
+    //Nether Blocks
+
+    //Fireblossom
+    public static final DeferredBlock<Block> FIREBLOSSOM = registerBlock("fireblossom", () -> new RootsBlock(
             BlockBehaviour
-                    .Properties.of()
-                    .strength(3f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.ANCIENT_DEBRIS)
-            ));
+                    .Properties
+                    .of()
+                    .mapColor(MapColor.NETHER)
+                    .replaceable()
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.FLOWERING_AZALEA)
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
+                    .pushReaction(PushReaction.DESTROY)
+    ));
 
-    public static final DeferredBlock<Block> PHANTASMIUM = registerBlock("phantasmium",
-            () -> new Block(BlockBehaviour
-                    .Properties.of()
-                    .strength(4f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.ANCIENT_DEBRIS)
-            ));
 
-    public static final DeferredBlock<Block> ZENALITE_BRICKS = registerBlock("zenalite_bricks",
-            () -> new Block(BlockBehaviour
-                    .Properties.of()
-                    .strength(4f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.DEEPSLATE_TILES)
-            ));
-
-    public static final DeferredBlock<Block> BLOCK_OF_ZENALITE = registerBlock("block_of_zenalite",
-            () -> new Block(BlockBehaviour
-                    .Properties.of()
-                    .strength(4f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.NETHERITE_BLOCK)
-            ));
-
+    //End Blocks
     public static final DeferredBlock<Block> ABYSSLATE = registerBlock("abysslate",
             () -> new Block(BlockBehaviour
                     .Properties.of()
@@ -65,36 +68,40 @@ public class HnSBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.ANCIENT_DEBRIS)
             ));
-
-    public static final DeferredBlock<Block> ZENALITE_STONE_ORE = registerBlock("zenalite_stone_ore",
-            () -> new DropExperienceBlock(UniformInt.of(2, 4),
-                    BlockBehaviour
-                            .Properties.of()
-                            .strength(3f)
-                            .requiresCorrectToolForDrops()
-                            .sound(SoundType.STONE)
+    public static final DeferredBlock<Block> PHANTASMIUM = registerBlock("phantasmium",
+            () -> new Block(BlockBehaviour
+                    .Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.ANCIENT_DEBRIS)
+            ));
+    public static final DeferredBlock<Block> VOIDSTONE = registerBlock("voidstone",
+            () -> new Block(BlockBehaviour
+                    .Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.ANCIENT_DEBRIS)
+            ));
+    public static final DeferredBlock<Block> COBBLED_VOIDSTONE = registerBlock("cobbled_voidstone",
+            () -> new Block(BlockBehaviour
+                    .Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.ANCIENT_DEBRIS)
             ));
 
-    public static final DeferredBlock<Block> ZENALITE_DEEPSLATE_ORE = registerBlock("zenalite_deepslate_ore",
-            () -> new DropExperienceBlock(UniformInt.of(2, 4),
-                    BlockBehaviour
-                            .Properties.of()
-                            .strength(3f)
-                            .requiresCorrectToolForDrops()
-                            .sound(SoundType.DEEPSLATE)
-            ));
 
-    public static final DeferredBlock<Block> WISEWOOD_PLANK = registerBlock("wisewood_planks",
-            () -> new DropExperienceBlock(UniformInt.of(2, 4),
-                    BlockBehaviour
-                            .Properties.of()
-                            .strength(3f)
-                            .requiresCorrectToolForDrops()
-                            .sound(SoundType.WOOD)
-            ));
 
-    public static final DeferredBlock<StairBlock> WISEWOOD_STAIRS = registerBlock("wisewood_stairs",
-            () -> new StairBlock(HnSBlocks.WISEWOOD_PLANK.get().defaultBlockState(),
+    //Zenalite Set
+    public static final DeferredBlock<Block> ZENALITE_BRICKS = registerBlock("zenalite_bricks",
+            () -> new Block(BlockBehaviour
+                    .Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.DEEPSLATE_TILES)
+            ));
+    public static final DeferredBlock<StairBlock> ZENALITE_STAIRS = registerBlock("zenalite_stairs",
+            () -> new StairBlock(HnSBlocks.ZENALITE_BRICKS.get().defaultBlockState(),
                     BlockBehaviour
                             .Properties
                             .of()
@@ -102,8 +109,7 @@ public class HnSBlocks {
                             .requiresCorrectToolForDrops()
                             .sound(SoundType.WOOD)
             ));
-
-    public static final DeferredBlock<SlabBlock> WISEWOOD_SLAB = registerBlock("wisewood_slab",
+    public static final DeferredBlock<SlabBlock> ZENALITE_SLAB = registerBlock("zenalite_slab",
             () -> new SlabBlock(
                     BlockBehaviour
                             .Properties
@@ -113,34 +119,95 @@ public class HnSBlocks {
                             .sound(SoundType.WOOD)
             ));
 
+
+
+    //Zenalite Ore
+    public static final DeferredBlock<Block> ZENALITE_STONE_ORE = registerBlock("zenalite_stone_ore",
+            () -> new DropExperienceBlock(UniformInt.of(2, 4),
+                    BlockBehaviour
+                            .Properties.of()
+                            .strength(3f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.STONE)
+            ));
+    public static final DeferredBlock<Block> ZENALITE_DEEPSLATE_ORE = registerBlock("zenalite_deepslate_ore",
+            () -> new DropExperienceBlock(UniformInt.of(2, 4),
+                    BlockBehaviour
+                            .Properties.of()
+                            .strength(3f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.DEEPSLATE)
+            ));
+    public static final DeferredBlock<Block> ZENALITE_ABYSSLATE_ORE = registerBlock("zenalite_abysslate_ore",
+            () -> new DropExperienceBlock(UniformInt.of(2, 4),
+                    BlockBehaviour
+                            .Properties.of()
+                            .strength(3f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.ANCIENT_DEBRIS)
+            ));
+    public static final DeferredBlock<Block> ZENALITE_VOIDSTONE_ORE = registerBlock("zenalite_voidstone_ore",
+            () -> new DropExperienceBlock(UniformInt.of(2, 4),
+                    BlockBehaviour
+                            .Properties.of()
+                            .strength(3f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.ANCIENT_DEBRIS)
+            ));
+
+
+
+    //Wisewood Set
+    public static final DeferredBlock<Block> WISEWOOD_PLANK = registerBlock("wisewood_planks",
+            () -> new DropExperienceBlock(UniformInt.of(2, 4),
+                    BlockBehaviour
+                            .Properties.of()
+                            .strength(3f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.WOOD)
+            ));
+    public static final DeferredBlock<StairBlock> WISEWOOD_STAIRS = registerBlock("wisewood_stairs",
+            () -> new StairBlock(HnSBlocks.WISEWOOD_PLANK.get().defaultBlockState(),
+                    BlockBehaviour
+                            .Properties
+                            .of()
+                            .strength(2f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.WOOD)
+            ));
+    public static final DeferredBlock<SlabBlock> WISEWOOD_SLAB = registerBlock("wisewood_slab",
+            () -> new SlabBlock(
+                    BlockBehaviour
+                            .Properties
+                            .of()
+                            .strength(2f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.WOOD)
+            ));
     public static final DeferredBlock<Block> WISEWOOD_LOG = registerBlock("wisewood_log",
             () -> new ModFlammableRotatedPillarBlock(
                     BlockBehaviour
                             .Properties
                             .ofFullCopy(Blocks.OAK_LOG)
             ));
-
     public static final DeferredBlock<Block> WISEWOOD_WOOD = registerBlock("wisewood_wood",
             () -> new ModFlammableRotatedPillarBlock(
                     BlockBehaviour
                             .Properties
                             .ofFullCopy(Blocks.OAK_WOOD)
             ));
-
     public static final DeferredBlock<Block> STRIPPED_WISEWOOD_LOG = registerBlock("stripped_wisewood_log",
             () -> new ModFlammableRotatedPillarBlock(
                     BlockBehaviour
                             .Properties
                             .ofFullCopy(Blocks.STRIPPED_OAK_LOG)
             ));
-
     public static final DeferredBlock<Block> STRIPPED_WISEWOOD_WOOD = registerBlock("stripped_wisewood_wood",
             () -> new ModFlammableRotatedPillarBlock(
                     BlockBehaviour
                             .Properties
                             .ofFullCopy(Blocks.STRIPPED_OAK_WOOD)
             ));
-
     public static final DeferredBlock<Block> WISEWOOD_LEAVES = registerBlock("wisewood_leaves",
             () -> new LeavesBlock(
                     BlockBehaviour
@@ -162,17 +229,36 @@ public class HnSBlocks {
                 }
             });
 
-    public static final DeferredBlock<Block> FIREBLOSSOM = registerBlock("fireblossom", () -> new RootsBlock(
-            BlockBehaviour
-                    .Properties
-                    .of()
-                    .mapColor(MapColor.NETHER)
-                    .replaceable()
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.FLOWERING_AZALEA)
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)
+
+
+    //Compact Block Set
+    public static final DeferredBlock<Block> ZENALITE_BLOCK = registerBlock("zenalite_block",
+            () -> new Block(BlockBehaviour
+                    .Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.NETHERITE_BLOCK)
+            ));
+    public static final DeferredBlock<Block> PYRIUM_BLOCK = registerBlock("pyrium_block",
+            () -> new Block(BlockBehaviour
+                    .Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.NETHERITE_BLOCK)
+            ));
+    public static final DeferredBlock<Block> MITHRIL_BLOCK = registerBlock("mithril_block",
+            () -> new Block(BlockBehaviour
+                    .Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.NETHERITE_BLOCK)
+            ));
+    public static final DeferredBlock<Block> ARCANE_STEEL_BLOCK = registerBlock("arcane_steel_block",
+            () -> new Block(BlockBehaviour
+                    .Properties.of()
+                    .strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.NETHERITE_BLOCK)
             ));
 
 

@@ -1,7 +1,9 @@
 {
-  "value": [
-    "hazennstuff:zenalite_stone_ore",
+  "replace": false,
+  "values": [
     "hazennstuff:zenalite_deepslate_ore",
+    "hazennstuff:zenalite_stone_ore",
+    "hazennstuff:zenalite_voidstone_ore",
     "hazennstuff:zenalite_abysslate_ore"
   ]
 }

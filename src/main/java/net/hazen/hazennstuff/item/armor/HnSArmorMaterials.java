@@ -140,7 +140,7 @@ public class HnSArmorMaterials {
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> DEUS_MATERIAL = register("deus",
             deityArmorMap(),
             40,
-            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            HnSSounds.SERAPH_EQUIP,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
             2,
             0.1F);
@@ -148,7 +148,7 @@ public class HnSArmorMaterials {
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> ARBITER_MATERIAL = register("arbiter",
             pureArmorMap(),
             40,
-            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            HnSSounds.SERAPH_EQUIP,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
             2,
             0.1F);

@@ -7,7 +7,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 
 public class HnSStaffTier implements IronsWeaponTier {
     // Frieren Staff
-    public static HnSStaffTier FRIEREN_STAFF = new HnSStaffTier(3, -3,
+    public static HnSStaffTier ARTIFICER = new HnSStaffTier(3, -3,
             new AttributeContainer(AttributeRegistry.CAST_TIME_REDUCTION, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.COOLDOWN_REDUCTION, .15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.SPELL_POWER, .10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)

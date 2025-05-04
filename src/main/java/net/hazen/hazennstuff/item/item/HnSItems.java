@@ -1,30 +1,26 @@
 package net.hazen.hazennstuff.item.item;
 
-import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
-import io.redspace.ironsspellbooks.api.item.weapons.MagicSwordItem;
-import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
-import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
-import io.redspace.ironsspellbooks.item.weapons.StaffItem;
-import io.redspace.ironsspellbooks.item.weapons.StaffTier;
 import io.redspace.ironsspellbooks.render.CinderousRarity;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.hazennstuff.HazenNStuff;
 import net.hazen.hazennstuff.item.armor.*;
 import net.hazen.hazennstuff.item.armor.Geckolib.*;
 import net.hazen.hazennstuff.item.curios.*;
-import net.hazen.hazennstuff.item.staves.FrierenStaffItem;
-import net.hazen.hazennstuff.item.staves.HnSStaffTier;
-import net.hazen.hazennstuff.item.weapons.BeongaeItem;
-import net.hazen.hazennstuff.item.weapons.FireblossomRapierItem;
-import net.hazen.hazennstuff.item.weapons.HNSExtendedWeaponTiers;
-import net.hazen.hazennstuff.item.weapons.IcePikeItem;
+import net.hazen.hazennstuff.item.staves.wisewood_cane.WisewoodCaneItem;
+import net.hazen.hazennstuff.item.util.HnSToolTier;
+import net.hazen.hazennstuff.item.util.spectral_pickaxe.SpectralPickaxeItem;
+import net.hazen.hazennstuff.item.weapons.ancient_warriors_axe.AncientWarriorsAxeItem;
+import net.hazen.hazennstuff.item.weapons.beongae.BeongaeItem;
+import net.hazen.hazennstuff.item.weapons.fireblossom_rapier.FireblossomRapierItem;
+import net.hazen.hazennstuff.item.weapons.ice_pike.IcePikeItem;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.PickaxeItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.hazen.hazennstuff.item.staves.frieren.FrierenStaffItem;
 
 public class HnSItems {
     // Ace comment here, but as a tip for organization, leave some comments for whatever section of
@@ -39,23 +35,29 @@ public class HnSItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> SILVER_SCRAPS = ITEMS.register("silver_scraps",
             () -> new Item(new Item.Properties()));
-
+    public static final DeferredItem<Item> EXCALIBUR_FRAGMENT = ITEMS.register("excalibur_fragment",
+            () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> RAWZENALITE = ITEMS.register("raw_zenalite",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> STARKISSEDZENALITE = ITEMS.register("starkissed_zenalite",
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> DIVINE_MOLD = ITEMS.register("divine_mold",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RUNESTONE_FRAGMENTS = ITEMS.register("runestone_fragments",
+            () -> new Item(new Item.Properties()));
 
     //Weapons
     public static final DeferredHolder<Item, Item> ICE_PIKE = ITEMS.register("ice_pike", IcePikeItem::new);
-
     public static final DeferredHolder<Item, Item> FIREBLOSSOM_RAPIER = ITEMS.register("fireblossom_rapier", FireblossomRapierItem::new);
-
     public static final DeferredHolder<Item, Item> BEONGAE = ITEMS.register("beongae", BeongaeItem::new);
+    public static final DeferredHolder<Item, Item> ANCIENT_WARRIORS_AXE = ITEMS.register("ancient_warriors_axe", AncientWarriorsAxeItem::new);
 
     //Staves
     public static final DeferredHolder<Item, Item> FRIEREN_STAFF = ITEMS.register("frieren_staff", FrierenStaffItem::new);
+    public static final DeferredHolder<Item, Item> WISEWOOD_CANE = ITEMS.register("wisewood_cane", WisewoodCaneItem::new);
+
+    //Tools
+    public static final DeferredHolder<Item, Item> SPECTRAL_PICKAXE = ITEMS.register("spectral_pickaxe", SpectralPickaxeItem::new);
 
     //Curios
     public static final DeferredItem<RupturedCurio> RUPTURED = ITEMS.register("ruptured", RupturedCurio::new);

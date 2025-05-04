@@ -1,5 +1,6 @@
 {
-  "value": [
+  "replace": false,
+  "values": [
     "hazennstuff:ice_pike"
   ]
 }
