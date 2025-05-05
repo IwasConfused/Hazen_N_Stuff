@@ -4,7 +4,7 @@
     "item": "minecraft:red_dye"
   },
   "base": {
-    "tag": "hazennstuff:netherite_battlemage_helmet"
+    "tag": "hazennstuff:armors/netherite_battlemage_helmet"
   },
   "result": {
     "count": 1,
