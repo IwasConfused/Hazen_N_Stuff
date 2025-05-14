@@ -24,7 +24,7 @@ public class GeckolibCreakingSorcererArmorItem extends ImbuableGeckolibHnSArmorI
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, .05, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .5, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE)
         );
     }
 
@@ -45,7 +45,7 @@ public class GeckolibCreakingSorcererArmorItem extends ImbuableGeckolibHnSArmorI
 
     private void evaluateArmorEffects(Player player) {
         if (!player.hasEffect(HnSEffects.CALL_OF_THE_GARDEN_EFFECT)) {
-            player.addEffect(new MobEffectInstance(HnSEffects.CALL_OF_THE_GARDEN_EFFECT, 200, 0, false, false, true));
+            player.addEffect(new MobEffectInstance(HnSEffects.CALL_OF_THE_GARDEN_EFFECT, 200, 0, false, false, false));
         }
     }
 

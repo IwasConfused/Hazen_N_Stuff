@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.curios.CurioBaseItem;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
+import net.hazen.hazennstuff.render.DeusRarity;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -16,7 +17,11 @@ import top.theillusivec4.curios.api.SlotContext;
 
 public class RadianceCurio extends CurioBaseItem {
     public RadianceCurio() {
-        super(ItemPropertiesHelper.equipment().stacksTo(1).fireResistant().rarity(Rarity.EPIC));
+        super(ItemPropertiesHelper
+                .equipment()
+                .stacksTo(1)
+                .fireResistant()
+                .rarity(DeusRarity.DEUS_RARITY_PROXY.getValue()));
     }
 
     //naur

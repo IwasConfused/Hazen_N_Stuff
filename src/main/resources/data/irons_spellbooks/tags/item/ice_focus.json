@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:ice",
+    "minecraft:packed_ice",
+    "minecraft:blue_ice",
+    "hazennstuff:permafrost_fragment",
+    "irons_spellbooks:permafrost_shard"
+  ]
+}

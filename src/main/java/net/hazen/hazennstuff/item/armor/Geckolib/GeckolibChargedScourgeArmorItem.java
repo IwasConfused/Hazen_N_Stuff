@@ -27,7 +27,7 @@ public class GeckolibChargedScourgeArmorItem extends ImbuableGeckolibHnSArmorIte
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.LIGHTNING_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, .05, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .05, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE)
         );
     }
 
@@ -48,7 +48,7 @@ public class GeckolibChargedScourgeArmorItem extends ImbuableGeckolibHnSArmorIte
 
     private void evaluateArmorEffects(Player player) {
         if (!player.hasEffect(HnSEffects.SCOURGES_GORGE_EFFECT)) {
-            player.addEffect(new MobEffectInstance(HnSEffects.SCOURGES_GORGE_EFFECT, 200, 0, false, false, true));
+            player.addEffect(new MobEffectInstance(HnSEffects.SCOURGES_GORGE_EFFECT, 200, 0, false, false, false));
         }
     }
 

@@ -1,7 +1,16 @@
 {
-  "item.hazennstuff.zenalite": "Zenalite",
+  "item.hazennstuff.zenalite_ingot": "Zenalite Ingot",
   "item.hazennstuff.raw_zenalite": "Raw Zenalite",
+  "item.hazennstuff.pyrium_nugget": "Pyrium Nugget",
+  "item.hazennstuff.silver_scraps": "Silver Scraps",
+  "item.hazennstuff.excalibur_fragment": "Excalibur Fragment",
   "item.hazennstuff.starkissed_zenalite": "Starkissed Zenalite",
+  "item.hazennstuff.deus_essence": "Deus Essence",
+  "item.hazennstuff.runestone_fragments": "Runestone Fragments",
+  "item.hazennstuff.permafrost_fragment": "Permafrost Fragment",
+  "item.hazennstuff.charred_bones": "Charred Bones",
+  "item.hazennstuff.overgrown_bone": "Overgrown Bone",
+  "item.hazennstuff.flaming_template": "Flaming Template",
   "item.hazennstuff.divine_mold": "Divine Mold",
 
 
@@ -13,16 +22,60 @@
 
 
 
-  "block.hazennstuff.zenalite_abysslate_ore": "Zenalite Abysslate Ore",
   "block.hazennstuff.phantasmium": "Phantasmium",
-  "block.hazennstuff.zenalite_bricks": "Zenalite Bricks",
-  "block.hazennstuff.block_of_zenalite": "Block of Zenalite",
   "block.hazennstuff.abysslate": "Abysslate",
+
+
   "block.hazennstuff.zenalite_deepslate_ore": "Zenalite Deepslate Ore",
   "block.hazennstuff.zenalite_stone_ore": "Zenalite Stone Ore",
+  "block.hazennstuff.zenalite_abysslate_ore": "Zenalite Abysslate Ore",
+  "block.hazennstuff.zenalite_voidstone_ore": "Voidstone Abysslate Ore",
+
+  "block.hazennstuff.runestone_slag": "Runestone Slag",
+  "block.hazennstuff.aquastone": "Aquastone",
+
+  "block.hazennstuff.fireblossom": "Fireblossom",
+
+
+  "block.hazennstuff.voidstone": "Voidstone",
+  "block.hazennstuff.cobbled_voidstone": "Cobbled Voidstone",
+
+
+  "block.hazennstuff.zenalite_bricks": "Zenalite Bricks",
+  "block.hazennstuff.zenalite_stairs": "Zenalite Stairs",
+  "block.hazennstuff.zenalite_slab": "Zenalite Slab",
+
+  "block.hazennstuff.zenalite_block": "Zenalite Block",
+  "block.hazennstuff.mithril_block": "Mithril Block",
+  "block.hazennstuff.pyrium_block": "Pyrium Block",
+  "block.hazennstuff.arcane_steel_block": "Arcane Steel Block",
+
+  "block.hazennstuff.wisewood_planks": "Wisewood Planks",
+  "block.hazennstuff.wisewood_door": "Wisewood Door",
+  "block.hazennstuff.wisewood_slab": "Wisewood Slab",
+  "block.hazennstuff.wisewood_fence": "Wisewood Fence",
+  "block.hazennstuff.wisewood_fence_gate": "Wisewood Fence Gate",
+  "block.hazennstuff.wisewood_stairs": "Wisewood Stairs",
+  "block.hazennstuff.wisewood_leaves": "Wisewood Leaves",
+  "block.hazennstuff.wisewood_log": "Wisewood Log",
+  "block.hazennstuff.wisewood_wood": "Wisewood Wood",
+  "block.hazennstuff.stripped_wisewood_log": "Stripped Wisewood Log",
+  "block.hazennstuff.stripped_wisewood_wood": "Stripped Wisewood Wood",
+  "block.hazennstuff.wisewood_trapdoor": "Wisewood Trapdoor",
 
 
   "item.hazennstuff.ice_pike": "Ice Pike",
+  "item.hazennstuff.beongae": "Beongae",
+  "item.hazennstuff.fireblossom_rapier": "Fireblossom Rapier",
+  "item.hazennstuff.ancient_warriors_axe": "Ancient Warrior's Axe",
+  "item.hazennstuff.skyscorcher": "Skyscorcher",
+  "item.hazennstuff.bountiful_harvest": "Bountiful Harvest",
+  "item.hazennstuff.starfury": "Starfury",
+
+
+  "item.hazennstuff.frieren_staff": "Frieren's Staff",
+  "item.hazennstuff.wisewood_cane": "Wisewood Cane",
+  "item.hazennstuff.rod_of_discord": "Rod of Discord",
 
 
 
@@ -65,6 +118,22 @@
   "item.hazennstuff.geckolib_flesh_mass_chestplate": "Flesh Mass Chestplate",
   "item.hazennstuff.geckolib_flesh_mass_leggings": "Flesh Mass Leggings",
   "item.hazennstuff.geckolib_flesh_mass_boots": "Flesh Mass Boots",
+
+  "item.hazennstuff.geckolib_dark_ritual_templar_helmet": "Some Woman's Hair",
+  "item.hazennstuff.geckolib_dark_ritual_templar_chestplate": "Dark Ritual Templar Chestplate",
+  "item.hazennstuff.geckolib_dark_ritual_templar_leggings": "Dark Ritual Templar Leggings",
+  "item.hazennstuff.geckolib_dark_ritual_templar_boots": "Dark Ritual Templar Boots",
+
+  "item.hazennstuff.geckolib_fireblossom_crown": "Fireblossom Battlemage Crown",
+  "item.hazennstuff.geckolib_fireblossom_helmet": "Fireblossom Battlemage Helmet",
+  "item.hazennstuff.geckolib_fireblossom_chestplate": "Fireblossom Battlemage Chestplate",
+  "item.hazennstuff.geckolib_fireblossom_leggings": "Fireblossom Battlemage Leggings",
+  "item.hazennstuff.geckolib_fireblossom_boots": "Fireblossom Battlemage Boots",
+
+  "item.hazennstuff.geckolib_arbitrium_robes_helmet": "Arbitrium Horns",
+  "item.hazennstuff.geckolib_arbitrium_robes_chestplate": "Arbitrium Robes",
+  "item.hazennstuff.geckolib_arbitrium_robes_leggings": "Arbitrium Leggings",
+  "item.hazennstuff.geckolib_arbitrium_robes_boots": "Arbitrium Tracers",
 
   "item.hazennstuff.creaking_helmet": "Creaking Mask",
   "item.hazennstuff.creaking_chestplate": "Creaking Chestplate",
@@ -116,15 +185,60 @@
   "item.hazennstuff.dark_ritual_templar_leggings": "Dark Ritual Templar Leggings",
   "item.hazennstuff.dark_ritual_templar_boots": "Dark Ritual Templar Boots",
 
-  "item.hazennstuff.geckolib_dark_ritual_templar_helmet": "Some Woman's Hair",
-  "item.hazennstuff.geckolib_dark_ritual_templar_chestplate": "Dark Ritual Templar Chestplate",
-  "item.hazennstuff.geckolib_dark_ritual_templar_leggings": "Dark Ritual Templar Leggings",
-  "item.hazennstuff.geckolib_dark_ritual_templar_boots": "Dark Ritual Templar Boots",
+  "item.hazennstuff.arbitrium_robes_helmet": "Arbitrium Horns",
+  "item.hazennstuff.arbitrium_robes_chestplate": "Arbitrium Robes",
+  "item.hazennstuff.arbitrium_robes_leggings": "Arbitrium Leggings",
+  "item.hazennstuff.arbitrium_robes_boots": "Arbitrium Tracers",
+
+  "item.hazennstuff.fireblossom_crown": "Fireblossom Battlemage Crown",
+  "item.hazennstuff.fireblossom_helmet": "Fireblossom Battlemage Helmet",
+  "item.hazennstuff.fireblossom_chestplate": "Fireblossom Battlemage Chestplate",
+  "item.hazennstuff.fireblossom_leggings": "Fireblossom Battlemage Leggings",
+  "item.hazennstuff.fireblossom_boots": "Fireblossom Battlemage Boots",
 
   "item.hazennstuff.frieren_helmet": "Frieren Hair",
   "item.hazennstuff.frieren_chestplate": "Frieren Robes",
   "item.hazennstuff.frieren_leggings": "Frieren Leggings",
   "item.hazennstuff.frieren_boots": "Frieren Boots",
+
+  "item.hazennstuff.project_sekai_helmet": "Miku's Hair",
+  "item.hazennstuff.project_sekai_chestplate": "Miku's Uniform",
+  "item.hazennstuff.project_sekai_leggings": "Miku's Leggings",
+  "item.hazennstuff.project_sekai_boots": "Miku's Boots",
+
+
+  "item.hazennstuff.rotten_girl_helmet": "''Miku's'' Hair",
+  "item.hazennstuff.rotten_girl_chestplate": "''Miku's'' Uniform",
+  "item.hazennstuff.rotten_girl_leggings": "''Miku's'' Leggings",
+  "item.hazennstuff.rotten_girl_boots": "''Miku's'' Boots",
+
+
+  "item.hazennstuff.synthesizer_v_helmet": "Teto's Hair",
+  "item.hazennstuff.synthesizer_v_chestplate": "Teto's Uniform",
+  "item.hazennstuff.synthesizer_v_leggings": "Teto's Leggings",
+  "item.hazennstuff.synthesizer_v_boots": "Teto's Boots",
+
+
+  "item.hazennstuff.utau_helmet": "Teto's Hair",
+  "item.hazennstuff.utau_chestplate": "Teto's Uniform",
+  "item.hazennstuff.utau_leggings": "Teto's Leggings",
+  "item.hazennstuff.utau_boots": "Teto's Boots",
+
+  "item.hazennstuff.atlas_helmet": "Atlas's Helmet",
+  "item.hazennstuff.atlas_chestplate": "Atlas's Chestplate",
+  "item.hazennstuff.atlas_leggings": "Atlas's Leggings",
+  "item.hazennstuff.atlas_boots": "Atlas's Boots",
+
+  "item.hazennstuff.miner_helmet": "Miner Helmet",
+  "item.hazennstuff.miner_chestplate": "Miner Chestplate",
+  "item.hazennstuff.miner_leggings": "Miner Leggings",
+  "item.hazennstuff.miner_boots": "Miner Boots",
+
+  "item.hazennstuff.spectral_spelunker_helmet": "Spectral Spelunker Helmet",
+  "item.hazennstuff.spectral_spelunker_chestplate": "Spectral Spelunker Chestplate",
+  "item.hazennstuff.spectral_spelunker_leggings": "Spectral Spelunker Leggings",
+  "item.hazennstuff.spectral_spelunker_boots": "Spectral Spelunker Boots",
+
 
 
   "curios.modifiers.mana_crystal": "When using the Mana Crystal:",
@@ -132,6 +246,9 @@
 
 
   "curios.identifier.mana_crystal": "Mana Crystal",
+
+
+  "spell.hazennstuff.chaotic_teleport": "Chaotic Teleport",
 
 
 
@@ -144,6 +261,9 @@
   "effect.hazennstuff.butchers_vanity": "Butcher's Vanity",
   "effect.hazennstuff.sub_zero": "Sub Zero",
   "effect.hazennstuff.grand_ender_dragon": "Grand Ender Dragon",
+  "effect.hazennstuff.fireblossom": "Fireblossom",
+  "effect.hazennstuff.arbiter": "Arbiter",
+  "effect.hazennstuff.discerning_the_eldritch": "Discerning the Eldritch",
 
 
   "sounds.hazennstuff.soul_flame_equip": "Soul Flame Armor Equipped",
@@ -154,10 +274,12 @@
   "sounds.hazennstuff.cryogenic_ruler_equip": "Cryogenic Ruler Armor Equipped",
   "sounds.hazennstuff.flesh_mass_equip": "Flesh Mass Armor Equipped",
   "sounds.hazennstuff.ender_dragon_equip": "Ender Dragon Armor Equipped",
+  "sounds.hazennstuff.chaotic_teleport": "???",
 
 
 
   "creativetab.hazennstuff.hazennstuff_materials": "Hazen 'n Stuff Materials",
   "creativetab.hazennstuff.hazennstuff_blocks": "Hazen 'n Stuff Blocks",
+  "creativetab.hazennstuff.hazennstuff_utility": "Hazen 'n Stuff Utility",
   "creativetab.hazennstuff.hazennstuff_equipment": "Hazen 'n Stuff Equipment"
 }

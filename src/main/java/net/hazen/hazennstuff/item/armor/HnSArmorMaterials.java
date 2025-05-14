@@ -129,6 +129,14 @@ public class HnSArmorMaterials {
             2,
             0.1F);
 
+    public static DeferredHolder<ArmorMaterial, ArmorMaterial> ATLAS_MATERIAL = register("atlas",
+            battlemageArmorMap(),
+            20,
+            SoundEvents.ARMOR_EQUIP_LEATHER,
+            () -> Ingredient.of(ItemRegistry.MAGIC_CLOTH.get()),
+            2,
+            0.1F);
+
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> FIREBLOSSOM_MATERIAL = register("fireblossom",
             pureArmorMap(),
             40,

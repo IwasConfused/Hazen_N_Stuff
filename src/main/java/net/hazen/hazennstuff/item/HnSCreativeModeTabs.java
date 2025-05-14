@@ -18,22 +18,28 @@ public class HnSCreativeModeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, HazenNStuff.MOD_ID);
 
     public static final Supplier<CreativeModeTab> HAZEN_N_STUFF_MATERIALS = CREATIVE_MODE_TAB.register("hazennstuff_materials",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(HnSItems.ZENALITE_INGOT.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(HnSItems.DIVINE_MOLD.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "hazennstuff_blocks"))
                     .title(Component.translatable("creativetab.hazennstuff.hazennstuff_materials"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(HnSItems.ZENALITE_INGOT);
-                        output.accept(HnSItems.RAWZENALITE);
-                        output.accept(HnSItems.STARKISSEDZENALITE);
+                        output.accept(HnSItems.RAW_ZENALITE);
+                        output.accept(HnSItems.STARKISSED_ZENALITE);
                         output.accept(HnSItems.DIVINE_MOLD);
                         output.accept(HnSItems.SILVER_SCRAPS);
                         output.accept(HnSItems.EXCALIBUR_FRAGMENT);
-                        output.accept(HnSItems.DIVINE_MOLD);
+                        output.accept(HnSItems.FLAMING_TEMPLATE);
+                        output.accept(HnSItems.DEUS_ESSENCE);
+                        output.accept(HnSItems.RUNESTONE_FRAGMENTS);
+                        output.accept(HnSItems.PERMAFROST_FRAGMENT);
+                        output.accept(HnSItems.OVERGROWN_BONE);
+                        output.accept(HnSItems.CHARRED_BONES);
+                        output.accept(HnSItems.PYRIUM_NUGGET);
                         output.accept(HnSBlocks.FIREBLOSSOM);
                     }).build());
 
     public static final Supplier<CreativeModeTab> HAZEN_N_STUFF_BLOCKS = CREATIVE_MODE_TAB.register("hazennstuff_blocks",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(HnSBlocks.ZENALITE_ABYSSLATE_ORE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(HnSBlocks.WISEWOOD_PLANK.get()))
                     .title(Component.translatable("creativetab.hazennstuff.hazennstuff_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
 
@@ -70,15 +76,21 @@ public class HnSCreativeModeTabs {
 
                         //Wisewood Set
                         output.accept(HnSBlocks.WISEWOOD_PLANK);
+                        output.accept(HnSBlocks.WISEWOOD_DOOR);
+                        output.accept(HnSBlocks.WISEWOOD_TRAPDOOR);
                         output.accept(HnSBlocks.WISEWOOD_SLAB);
+                        output.accept(HnSBlocks.WISEWOOD_FENCE);
+                        output.accept(HnSBlocks.WISEWOOD_FENCE_GATE);
                         output.accept(HnSBlocks.WISEWOOD_STAIRS);
                         output.accept(HnSBlocks.WISEWOOD_LEAVES);
                         output.accept(HnSBlocks.WISEWOOD_LOG);
+                        output.accept(HnSBlocks.WISEWOOD_WOOD);
                         output.accept(HnSBlocks.STRIPPED_WISEWOOD_LOG);
+                        output.accept(HnSBlocks.STRIPPED_WISEWOOD_WOOD);
                     }).build());
 
     public static final Supplier<CreativeModeTab> HAZEN_N_STUFF_EQUIPMENT = CREATIVE_MODE_TAB.register("hazennstuff_equipment",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(HnSItems.RADIANCE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(HnSItems.CRYOGENIC_RULER_HELMET.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "hazennstuff_materials"))
                     .title(Component.translatable("creativetab.hazennstuff.hazennstuff_equipment"))
                     .displayItems((itemDisplayParameters, output) -> {
@@ -163,70 +175,32 @@ public class HnSCreativeModeTabs {
                         output.accept(HnSItems.FIREBLOSSOM_BATTLEMAGE_CHESTPLATE.get());
                         output.accept(HnSItems.FIREBLOSSOM_BATTLEMAGE_LEGGINGS.get());
                         output.accept(HnSItems.FIREBLOSSOM_BATTLEMAGE_BOOTS.get());
-
-
-                        //Geckolib
-
-                        // Creaking
-                        output.accept(HnSItems.GECKOLIB_CREAKING_HELMET.get());
-                        output.accept(HnSItems.GECKOLIB_CREAKING_CHESTPLATE.get());
-                        output.accept(HnSItems.GECKOLIB_CREAKING_LEGGINGS.get());
-                        output.accept(HnSItems.GECKOLIB_CREAKING_BOOTS.get());
-                        // Seraph
-                        output.accept(HnSItems.GECKOLIB_SERAPH_HELMET.get());
-                        output.accept(HnSItems.GECKOLIB_SERAPH_CHESTPLATE.get());
-                        output.accept(HnSItems.GECKOLIB_SERAPH_LEGGINGS.get());
-                        output.accept(HnSItems.GECKOLIB_SERAPH_BOOTS.get());
-                        // Scourge
-                        output.accept(HnSItems.GECKOLIB_CHARGED_SCOURGE_HELMET.get());
-                        output.accept(HnSItems.GECKOLIB_CHARGED_SCOURGE_CHESTPLATE.get());
-                        output.accept(HnSItems.GECKOLIB_CHARGED_SCOURGE_LEGGINGS.get());
-                        output.accept(HnSItems.GECKOLIB_CHARGED_SCOURGE_BOOTS.get());
-                        // Soul Flamed
-                        output.accept(HnSItems.GECKOLIB_SOUL_FLAME_HELMET.get());
-                        output.accept(HnSItems.GECKOLIB_SOUL_FLAME_CHESTPLATE.get());
-                        output.accept(HnSItems.GECKOLIB_SOUL_FLAME_LEGGINGS.get());
-                        output.accept(HnSItems.GECKOLIB_SOUL_FLAME_BOOTS.get());
-                        // Supreme Witch
-                        output.accept(HnSItems.GECKOLIB_SUPREME_WITCH_HELMET.get());
-                        output.accept(HnSItems.GECKOLIB_SUPREME_WITCH_CHESTPLATE.get());
-                        output.accept(HnSItems.GECKOLIB_SUPREME_WITCH_LEGGINGS.get());
-                        output.accept(HnSItems.GECKOLIB_SUPREME_WITCH_BOOTS.get());
-                        // Cryogenic Ruler
-                        output.accept(HnSItems.GECKOLIB_CRYOGENIC_RULER_HELMET.get());
-                        output.accept(HnSItems.GECKOLIB_CRYOGENIC_RULER_CHESTPLATE.get());
-                        output.accept(HnSItems.GECKOLIB_CRYOGENIC_RULER_LEGGINGS.get());
-                        output.accept(HnSItems.GECKOLIB_CRYOGENIC_RULER_BOOTS.get());
-                        // Flesh Mass
-                        output.accept(HnSItems.GECKOLIB_FLESH_MASS_HELMET.get());
-                        output.accept(HnSItems.GECKOLIB_FLESH_MASS_CHESTPLATE.get());
-                        output.accept(HnSItems.GECKOLIB_FLESH_MASS_LEGGINGS.get());
-                        output.accept(HnSItems.GECKOLIB_FLESH_MASS_BOOTS.get());
-                        // Ender Dragon
-                        output.accept(HnSItems.GECKOLIB_ENDER_DRAGON_HELMET.get());
-                        output.accept(HnSItems.GECKOLIB_ENDER_DRAGON_CHESTPLATE.get());
-                        output.accept(HnSItems.GECKOLIB_ENDER_DRAGON_LEGGINGS.get());
-                        output.accept(HnSItems.GECKOLIB_ENDER_DRAGON_BOOTS.get());
-                        // Supreme Witch
-                        output.accept(HnSItems.GECKOLIB_DARK_RITUAL_TEMPLAR_HELMET.get());
-                        output.accept(HnSItems.GECKOLIB_DARK_RITUAL_TEMPLAR_CHESTPLATE.get());
-                        output.accept(HnSItems.GECKOLIB_DARK_RITUAL_TEMPLAR_LEGGINGS.get());
-                        output.accept(HnSItems.GECKOLIB_DARK_RITUAL_TEMPLAR_BOOTS.get());
-                        // Fireblossom
-                        output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_CROWN.get());
-                        output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_HELMET.get());
-                        output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_CHESTPLATE.get());
-                        output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_LEGGINGS.get());
-                        output.accept(HnSItems.GECKOLIB_FIREBLOSSOM_BATTLEMAGE_BOOTS.get());
-
-
-
+                        // Miner
+                        output.accept(HnSItems.MINER_HELMET.get());
+                        output.accept(HnSItems.MINER_CHESTPLATE.get());
+                        output.accept(HnSItems.MINER_LEGGINGS.get());
+                        output.accept(HnSItems.MINER_BOOTS.get());
+                        // Spectral Spelunker
+                        output.accept(HnSItems.SPECTRAL_SPELUNKER_HELMET.get());
+                        output.accept(HnSItems.SPECTRAL_SPELUNKER_CHESTPLATE.get());
+                        output.accept(HnSItems.SPECTRAL_SPELUNKER_LEGGINGS.get());
+                        output.accept(HnSItems.SPECTRAL_SPELUNKER_BOOTS.get());
+                        // Arbitrium Robes
+                        output.accept(HnSItems.ARBITRIUM_ROBES_HELMET.get());
+                        output.accept(HnSItems.ARBITRIUM_ROBES_CHESTPLATE.get());
+                        output.accept(HnSItems.ARBITRIUM_ROBES_LEGGINGS.get());
+                        output.accept(HnSItems.ARBITRIUM_ROBES_BOOTS.get());
+                        // Atlas
+                        output.accept(HnSItems.ATLAS_HELMET.get());
+                        output.accept(HnSItems.ATLAS_CHESTPLATE.get());
+                        output.accept(HnSItems.ATLAS_LEGGINGS.get());
+                        output.accept(HnSItems.ATLAS_BOOTS.get());
                     }).build());
 
-    public static final Supplier<CreativeModeTab> HAZEN_N_STUFF_WEAPONS = CREATIVE_MODE_TAB.register("hazennstuff_utility",
+    public static final Supplier<CreativeModeTab> HAZEN_N_STUFF_UTILITY = CREATIVE_MODE_TAB.register("hazennstuff_utility",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(HnSItems.RADIANCE.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(HazenNStuff.MOD_ID, "hazennstuff_equipment"))
-                    .title(Component.translatable("creativetab.hazennstuff.hazennstuff_equipment"))
+                    .title(Component.translatable("creativetab.hazennstuff.hazennstuff_utility"))
                     .displayItems((itemDisplayParameters, output) -> {
 
                         //Weapons
@@ -240,6 +214,12 @@ public class HnSCreativeModeTabs {
                         output.accept(HnSItems.ANCIENT_WARRIORS_AXE.get());
                         //Ice Pike
                         output.accept(HnSItems.ICE_PIKE.get());
+                        //Skyscorcher
+                        output.accept(HnSItems.SKYSCORCHER.get());
+                        //Bountiful Harvest
+                        output.accept(HnSItems.BOUNTIFUL_HARVEST.get());
+                        //Bountiful Harvest
+                        output.accept(HnSItems.STARFURY.get());
 
 
                         //Staves
@@ -248,6 +228,8 @@ public class HnSCreativeModeTabs {
                         output.accept(HnSItems.WISEWOOD_CANE.get());
                         //Frieren Staff
                         output.accept(HnSItems.FRIEREN_STAFF.get());
+                        //Frieren Staff
+                        output.accept(HnSItems.ROD_OF_DISCORD.get());
 
 
                         //Curios

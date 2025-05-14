@@ -13,6 +13,14 @@ public class HnSSounds {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS =
             DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, HazenNStuff.MOD_ID);
 
+    // Spell Sounds
+
+    public static DeferredHolder<SoundEvent, SoundEvent> CHAOTIC_TELEPORT = registerSoundEvent("chaotic_teleport");
+
+
+    // Equip Sounds
+
+
     //Soul Flame Equip
     public static final Holder<SoundEvent> SOUL_FLAME_EQUIP_1 = registerSoundEvent("soul_flame_equip_1");
     public static final Holder<SoundEvent> SOUL_FLAME_EQUIP_2 = registerSoundEvent("soul_flame_equip_2");

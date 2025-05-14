@@ -24,7 +24,7 @@ public class GeckolibEnderDragonArmorItem extends ImbuableGeckolibHnSArmorItem {
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, .05, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .05, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE)
         );
     }
 
@@ -45,7 +45,7 @@ public class GeckolibEnderDragonArmorItem extends ImbuableGeckolibHnSArmorItem {
 
     private void evaluateArmorEffects(Player player) {
         if (!player.hasEffect(HnSEffects.GRAND_ENDER_DRAGON_EFFECT)) {
-            player.addEffect(new MobEffectInstance(HnSEffects.GRAND_ENDER_DRAGON_EFFECT, 200, 0, false, false, true));
+            player.addEffect(new MobEffectInstance(HnSEffects.GRAND_ENDER_DRAGON_EFFECT, 200, 0, false, false, false));
         }
     }
 

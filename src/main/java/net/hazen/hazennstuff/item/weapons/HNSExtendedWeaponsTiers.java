@@ -40,6 +40,7 @@ public class HNSExtendedWeaponsTiers implements Tier, IronsWeaponTier {
             () -> Ingredient.of(HnSItems.ZENALITE_INGOT.get()),
             new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, 0.20, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.20, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(Attributes.ATTACK_SPEED, 1.3, AttributeModifier.Operation.ADD_VALUE),
             new AttributeContainer(ALObjects.Attributes.FIRE_DAMAGE, 3, AttributeModifier.Operation.ADD_VALUE),
             new AttributeContainer(Attributes.ENTITY_INTERACTION_RANGE, 2, AttributeModifier.Operation.ADD_VALUE)
     );
@@ -47,13 +48,13 @@ public class HNSExtendedWeaponsTiers implements Tier, IronsWeaponTier {
     //  Beongae
     public static HNSExtendedWeaponsTiers BEONGAE = new HNSExtendedWeaponsTiers(
             8064,
-            9,
+            7,
             -3.0F,
             10,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(HnSItems.ZENALITE_INGOT.get()),
-            new AttributeContainer(AttributeRegistry.LIGHTNING_SPELL_POWER, 0.20, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(ALObjects.Attributes.CRIT_DAMAGE, .25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(AttributeRegistry.LIGHTNING_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(ALObjects.Attributes.CRIT_DAMAGE, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
             new AttributeContainer(Attributes.ATTACK_SPEED, -0.2, AttributeModifier.Operation.ADD_VALUE)
     );
 
@@ -65,9 +66,8 @@ public class HNSExtendedWeaponsTiers implements Tier, IronsWeaponTier {
             10,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(HnSItems.ZENALITE_INGOT.get()),
-            new AttributeContainer(AttributeRegistry.EVOCATION_SPELL_POWER, 0.20, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-            new AttributeContainer(ALObjects.Attributes.CRIT_DAMAGE, .25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
-            new AttributeContainer(Attributes.ATTACK_SPEED, -0.2, AttributeModifier.Operation.ADD_VALUE)
+            new AttributeContainer(AttributeRegistry.EVOCATION_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(ALObjects.Attributes.CRIT_DAMAGE, .15, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
     );
 
     public static HNSExtendedWeaponsTiers MITHRIL = new HNSExtendedWeaponsTiers(
@@ -78,6 +78,45 @@ public class HNSExtendedWeaponsTiers implements Tier, IronsWeaponTier {
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(ItemRegistry.MITHRIL_SCRAP.get()),
             new AttributeContainer(AttributeRegistry.EVOCATION_SPELL_POWER, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE)
+    );
+
+    public static HNSExtendedWeaponsTiers SKYSCORCHER = new HNSExtendedWeaponsTiers(
+            8064,
+            9,
+            -3.0F,
+            10,
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            () -> Ingredient.of(HnSItems.ZENALITE_INGOT.get()),
+            new AttributeContainer(AttributeRegistry.LIGHTNING_SPELL_POWER, 0.20, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(ALObjects.Attributes.CRIT_DAMAGE, .25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(ALObjects.Attributes.CRIT_CHANCE, .5, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(Attributes.ATTACK_SPEED, -0.3, AttributeModifier.Operation.ADD_VALUE)
+    );
+
+    public static HNSExtendedWeaponsTiers BOUNTIFUL_HARVEST = new HNSExtendedWeaponsTiers(
+            8064,
+            13,
+            -3.0F,
+            10,
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            () -> Ingredient.of(HnSItems.ZENALITE_INGOT.get()),
+            new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(ALObjects.Attributes.PROT_PIERCE, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(ALObjects.Attributes.ARMOR_PIERCE, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(Attributes.ATTACK_SPEED, -0.4, AttributeModifier.Operation.ADD_VALUE)
+    );
+
+    public static HNSExtendedWeaponsTiers STARFURY = new HNSExtendedWeaponsTiers(
+            8064,
+            9,
+            -3.0F,
+            10,
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            () -> Ingredient.of(HnSItems.ZENALITE_INGOT.get()),
+            new AttributeContainer(ALObjects.Attributes.PROT_PIERCE, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(ALObjects.Attributes.ARMOR_PIERCE, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER, .05, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(Attributes.ATTACK_SPEED, 0.8, AttributeModifier.Operation.ADD_VALUE)
     );
 
     //private final int level;

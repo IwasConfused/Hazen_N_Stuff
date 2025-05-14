@@ -13,12 +13,16 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.Map;
 import java.util.function.Supplier;
 
 public class HnSBlocks {
@@ -107,7 +111,7 @@ public class HnSBlocks {
                             .of()
                             .strength(2f)
                             .requiresCorrectToolForDrops()
-                            .sound(SoundType.WOOD)
+                            .sound(SoundType.DEEPSLATE_TILES)
             ));
     public static final DeferredBlock<SlabBlock> ZENALITE_SLAB = registerBlock("zenalite_slab",
             () -> new SlabBlock(
@@ -116,7 +120,7 @@ public class HnSBlocks {
                             .of()
                             .strength(2f)
                             .requiresCorrectToolForDrops()
-                            .sound(SoundType.WOOD)
+                            .sound(SoundType.DEEPSLATE_TILES)
             ));
 
 
@@ -159,30 +163,38 @@ public class HnSBlocks {
 
     //Wisewood Set
     public static final DeferredBlock<Block> WISEWOOD_PLANK = registerBlock("wisewood_planks",
-            () -> new DropExperienceBlock(UniformInt.of(2, 4),
-                    BlockBehaviour
-                            .Properties.of()
-                            .strength(3f)
-                            .requiresCorrectToolForDrops()
+            () -> new
+                    Block(BlockBehaviour
+                            .Properties
+                            .of()
+                            .mapColor(MapColor.WOOD)
+                            .instrument(NoteBlockInstrument.BASS)
+                            .strength(2.0F, 3.0F)
                             .sound(SoundType.WOOD)
+                            .ignitedByLava()
             ));
+
     public static final DeferredBlock<StairBlock> WISEWOOD_STAIRS = registerBlock("wisewood_stairs",
-            () -> new StairBlock(HnSBlocks.WISEWOOD_PLANK.get().defaultBlockState(),
+            () -> new StairBlock
+                    (HnSBlocks.WISEWOOD_PLANK.get().defaultBlockState(),
                     BlockBehaviour
                             .Properties
                             .of()
-                            .strength(2f)
-                            .requiresCorrectToolForDrops()
+                            .strength(2.0F, 3.0F)
                             .sound(SoundType.WOOD)
+                            .ignitedByLava()
             ));
+
     public static final DeferredBlock<SlabBlock> WISEWOOD_SLAB = registerBlock("wisewood_slab",
             () -> new SlabBlock(
                     BlockBehaviour
                             .Properties
                             .of()
-                            .strength(2f)
-                            .requiresCorrectToolForDrops()
+                            .mapColor(MapColor.WOOD)
+                            .instrument(NoteBlockInstrument.BASS)
+                            .strength(2.0F, 3.0F)
                             .sound(SoundType.WOOD)
+                            .ignitedByLava()
             ));
     public static final DeferredBlock<Block> WISEWOOD_LOG = registerBlock("wisewood_log",
             () -> new ModFlammableRotatedPillarBlock(
@@ -228,6 +240,57 @@ public class HnSBlocks {
                     return 30;
                 }
             });
+
+    public static final DeferredBlock<FenceGateBlock> WISEWOOD_FENCE_GATE = registerBlock("wisewood_fence_gate",
+            () -> new FenceGateBlock(WoodType.CHERRY,
+                    BlockBehaviour
+                            .Properties
+                            .of()
+                            .mapColor(MapColor.WOOD)
+                            .instrument(NoteBlockInstrument.BASS)
+                            .strength(2.0F, 3.0F)
+                            .sound(SoundType.WOOD)
+                            .ignitedByLava()
+            ));
+
+    public static final DeferredBlock<FenceBlock> WISEWOOD_FENCE = registerBlock("wisewood_fence",
+            () -> new FenceBlock(
+                    BlockBehaviour
+                            .Properties
+                            .of()
+                            .mapColor(MapColor.WOOD)
+                            .instrument(NoteBlockInstrument.BASS)
+                            .strength(2.0F, 3.0F)
+                            .ignitedByLava()
+                            .sound(SoundType.WOOD)
+            ));
+    public static final DeferredBlock<DoorBlock> WISEWOOD_DOOR = registerBlock("wisewood_door",
+            () -> new DoorBlock(
+                    BlockSetType.OAK,
+                    BlockBehaviour
+                    .Properties
+                    .of()
+                    .mapColor(MapColor.WOOD)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(3.0F)
+                    .noOcclusion()
+                    .ignitedByLava()
+                    .pushReaction(PushReaction.DESTROY)
+            ));
+    public static final DeferredBlock<TrapDoorBlock> WISEWOOD_TRAPDOOR = registerBlock("wisewood_trapdoor",
+            () -> new TrapDoorBlock(
+                    BlockSetType.OAK,
+                    BlockBehaviour
+                            .Properties
+                            .of()
+                            .mapColor(MapColor.WOOD)
+                            .instrument(NoteBlockInstrument.BASS)
+                            .strength(3.0F)
+                            .noOcclusion()
+                            .isValidSpawn(Blocks::never)
+                            .ignitedByLava()));
+
+
 
 
 

@@ -25,7 +25,7 @@ public class GeckolibFireblossomBattlemageCrownedArmorItem extends ImbuableGecko
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.NATURE_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.FIRE_SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .05, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE)
         );
     }
 
@@ -35,5 +35,25 @@ public class GeckolibFireblossomBattlemageCrownedArmorItem extends ImbuableGecko
     @OnlyIn(Dist.CLIENT)
     public GeoArmorRenderer<?> supplyRenderer() {
         return new GenericCustomArmorRenderer<>(new GeckolibFireblossomBattlemageCrownedArmorModel());
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
+        if (entity instanceof Player player && !level.isClientSide() && isWearingFullSet(player)) {
+            evaluateArmorEffects(player);
+        }
+    }
+
+    private void evaluateArmorEffects(Player player) {
+        if (!player.hasEffect(HnSEffects.FIREBLOSSOM_EFFECT)) {
+            player.addEffect(new MobEffectInstance(HnSEffects.FIREBLOSSOM_EFFECT, 200, 0, false, false, false));
+        }
+    }
+
+    private boolean isWearingFullSet(Player player) {
+        return player.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof GeckolibFireblossomBattlemageCrownedArmorItem &&
+                player.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof GeckolibFireblossomBattlemageHelmetArmorItem &&
+                player.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof GeckolibFireblossomBattlemageHelmetArmorItem &&
+                player.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof GeckolibFireblossomBattlemageHelmetArmorItem;
     }
 }

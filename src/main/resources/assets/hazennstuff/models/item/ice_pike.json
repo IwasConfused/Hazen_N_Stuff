@@ -1,5 +1,5 @@
 {
-  "credit": "Made by Ace The Eldritch King",
+  "credit": "Made with Blockbench",
   "parent": "builtin/entity",
   "texture_size": [
     128,
@@ -64,6 +64,13 @@
         9.75
       ]
     },
+    "ground": {
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
     "gui": {
       "translation": [
         0,
@@ -92,6 +99,6 @@
     }
   },
   "textures": {
-    "particle": "item/weapons/ice_pike/ice_pike"
+    "particle": "item/ice_pike"
   }
 }

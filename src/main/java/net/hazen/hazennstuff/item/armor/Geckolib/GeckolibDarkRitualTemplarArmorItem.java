@@ -24,7 +24,7 @@ public class GeckolibDarkRitualTemplarArmorItem extends ImbuableGeckolibHnSArmor
         super(HnSArmorMaterials.DARK_RITUAL_TEMPLAR_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.ELDRITCH_SPELL_POWER, .2, AttributeModifier.Operation.ADD_VALUE),
-                new AttributeContainer(AttributeRegistry.SPELL_POWER, .05, AttributeModifier.Operation.ADD_VALUE)
+                new AttributeContainer(AttributeRegistry.SPELL_POWER, .15, AttributeModifier.Operation.ADD_VALUE)
         );
     }
 
@@ -44,15 +44,15 @@ public class GeckolibDarkRitualTemplarArmorItem extends ImbuableGeckolibHnSArmor
     }
 
     private void evaluateArmorEffects(Player player) {
-        if (!player.hasEffect(HnSEffects.GRAND_ENDER_DRAGON_EFFECT)) {
-            player.addEffect(new MobEffectInstance(HnSEffects.GRAND_ENDER_DRAGON_EFFECT, 200, 0, false, false, true));
+        if (!player.hasEffect(HnSEffects.DISCERNING_THE_ELDRITCH_EFFECT)) {
+            player.addEffect(new MobEffectInstance(HnSEffects.DISCERNING_THE_ELDRITCH_EFFECT, 200, 0, false, false, false));
         }
     }
 
     private boolean isWearingFullSet(Player player) {
-        return player.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof GeckolibEnderDragonArmorItem &&
-                player.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof GeckolibEnderDragonArmorItem &&
-                player.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof GeckolibEnderDragonArmorItem &&
-                player.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof GeckolibEnderDragonArmorItem;
+        return player.getItemBySlot(ArmorItem.Type.HELMET.getSlot()).getItem() instanceof GeckolibDarkRitualTemplarArmorItem &&
+                player.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof GeckolibDarkRitualTemplarArmorItem &&
+                player.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof GeckolibDarkRitualTemplarArmorItem &&
+                player.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof GeckolibDarkRitualTemplarArmorItem;
     }
 }
