@@ -27,6 +27,8 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.hazen.hazennstuff.item.staves.frieren.FrierenStaffItem;
 
+import java.util.Collection;
+
 public class HnSItems {
     // Ace comment here, but as a tip for organization, leave some comments for whatever section of
     // Items you want to be organized
@@ -760,8 +762,14 @@ public class HnSItems {
             .durability(ArmorItem.Type.LEGGINGS.getDurability(90))));
 
 
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
+
+    public static Collection<DeferredHolder<Item, ? extends Item>> getHnSItems()
+    {
+        return ITEMS.getEntries();
     }
 
+    public static void register(IEventBus eventBus)
+    {
+        ITEMS.register(eventBus);
+    }
 }
