@@ -2,6 +2,7 @@ package net.hazen.hazennstuff.item.armor.Geckolib;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
+import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import mod.azure.azurelib.common.internal.common.util.AzureLibUtil;
 import mod.azure.azurelib.core.animation.*;
@@ -26,7 +27,7 @@ import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class ArbitriumRobesGeckolibArmorItem extends ImbuableGeckolibHnSArmorItem {
+public class ArbitriumRobesGeckolibArmorItem extends ImbuableGeckolibHnSArmorItem implements IDisableJacket {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     public ArbitriumRobesGeckolibArmorItem(Type type, Properties settings) {
         // Add in your armor tier + additional attributes for your item
@@ -80,30 +81,4 @@ public class ArbitriumRobesGeckolibArmorItem extends ImbuableGeckolibHnSArmorIte
         return cache;
     }
 
-    @OnlyIn(Dist.CLIENT)
-    private PlayState wings(AnimationState animationState)
-    {
-        Player player = Minecraft.getInstance().player;
-
-        // Flight
-        if (player != null && (player.getAbilities().flying || player.isFallFlying() && !player.onGround()))
-        {
-            //System.out.println("Flight");
-            animationState.getController().setAnimation(mod.azure.azurelib.core.animation.RawAnimation.begin().then("flying", Animation.LoopType.LOOP));
-        }
-        // Idle
-        else if (player != null && !(player.getAbilities().flying || player.isFallFlying() && player.onGround()))
-        {
-            //System.out.println("Idle");
-            animationState.getController().setAnimation(mod.azure.azurelib.core.animation.RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
-        }
-        // Sneaking
-        else if (player != null && player.isCrouching())
-        {
-            //System.out.println("Sneaking");
-            animationState.getController().setAnimation(RawAnimation.begin().then("fall_fly", Animation.LoopType.LOOP));
-        }
-
-        return PlayState.CONTINUE;
-    }
 }

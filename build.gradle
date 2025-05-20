@@ -146,7 +146,7 @@ configurations {
 }
 
 dependencies {
-    implementation "curse.maven:iss-855414:6359979"
+    implementation "curse.maven:iss-855414:6497109"
     implementation "curse.maven:geckolib-388172:6304958"
     implementation "curse.maven:player_animator-658587:6024462"
     implementation "curse.maven:curios-309927:6342656"
@@ -154,7 +154,20 @@ dependencies {
     implementation "curse.maven:apothic-attributes-898963:6302334"
     implementation "curse.maven:placebo-283644:6337156"
 
+
+    implementation "mod.azure.azurelib:azurelib-neo-1.21.1:3.0.13"
+
     implementation "curse.maven:azurelib-817423:6004979"
+
+    compileOnly "mezz.jei:jei-${jei_mc_version}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${jei_mc_version}-neoforge-api:${jei_version}"
+    runtimeOnly "mezz.jei:jei-${jei_mc_version}-neoforge:${jei_version}"
+
+    compileOnly "curse.maven:apotheosis-${apotheosis_version}"
+
+    localRuntime "curse.maven:better-combat-by-daedelus-639842:5723092"
+    localRuntime "curse.maven:cloth-config-348521:5623420"
+
 
 }
 

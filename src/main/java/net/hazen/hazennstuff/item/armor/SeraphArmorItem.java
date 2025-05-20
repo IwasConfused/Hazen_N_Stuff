@@ -2,30 +2,18 @@ package net.hazen.hazennstuff.item.armor;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
+import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import mod.azure.azurelib.common.api.common.animatable.GeoItem;
-import mod.azure.azurelib.common.internal.client.RenderProvider;
-import mod.azure.azurelib.core.animatable.GeoAnimatable;
 import net.hazen.hazennstuff.effect.HnSEffects;
-import net.hazen.hazennstuff.entity.render.armor.CreakingSorcererArmorRenderer;
-import net.hazen.hazennstuff.entity.render.armor.CryogenicRulerArmorRenderer;
-import net.hazen.hazennstuff.entity.render.armor.EnderDragonArmorRenderer;
-import net.hazen.hazennstuff.entity.render.armor.SeraphArmorRenderer;
-import net.hazen.hazennstuff.item.armor.HnSArmorMaterials;
-import net.hazen.hazennstuff.item.armor.ImbuableHnSArmorItem;
-import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import java.util.function.Consumer;
-
-public class SeraphArmorItem extends ImbuableHnSArmorItem implements GeoAnimatable, GeoItem {
+public class SeraphArmorItem extends ImbuableHnSArmorItem implements GeoItem {
     public SeraphArmorItem(ArmorItem.Type type, Properties settings) {
         super(HnSArmorMaterials.SERAPH_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
@@ -46,6 +34,9 @@ public class SeraphArmorItem extends ImbuableHnSArmorItem implements GeoAnimatab
         if (!player.hasEffect(HnSEffects.SERAPHS_MIGHT_EFFECT)) {
             player.addEffect(new MobEffectInstance(HnSEffects.SERAPHS_MIGHT_EFFECT, 200, 0, false, false, false));
         }
+        if (!player.hasEffect(MobEffectRegistry.ANGEL_WINGS)) {
+            player.addEffect(new MobEffectInstance(MobEffectRegistry.ANGEL_WINGS, 200, 0, false, false, false));
+        }
     }
 
     private boolean isWearingFullSet(Player player) {
@@ -53,23 +44,5 @@ public class SeraphArmorItem extends ImbuableHnSArmorItem implements GeoAnimatab
                 player.getItemBySlot(ArmorItem.Type.CHESTPLATE.getSlot()).getItem() instanceof SeraphArmorItem &&
                 player.getItemBySlot(ArmorItem.Type.LEGGINGS.getSlot()).getItem() instanceof SeraphArmorItem &&
                 player.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof SeraphArmorItem;
-    }
-
-    @Override
-    public void createRenderer(Consumer<RenderProvider> consumer) {
-        consumer.accept(new RenderProvider() {
-            private SeraphArmorRenderer renderer;
-
-            @Override
-            public HumanoidModel<LivingEntity> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<LivingEntity> original) {
-                if (renderer == null)
-                {
-                    renderer = new SeraphArmorRenderer();
-                }
-                renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
-
-                return this.renderer;
-            }
-        });
     }
 }
