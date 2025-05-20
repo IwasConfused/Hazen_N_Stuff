@@ -1,6 +1,7 @@
 package net.hazen.hazennstuff.item.armor;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import mod.azure.azurelib.common.api.common.animatable.GeoItem;
@@ -13,7 +14,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class SeraphArmorItem extends ImbuableHnSArmorItem implements GeoItem {
+public class SeraphArmorItem extends ImbuableHnSArmorItem implements IDisableJacket {
     public SeraphArmorItem(ArmorItem.Type type, Properties settings) {
         super(HnSArmorMaterials.SERAPH_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),

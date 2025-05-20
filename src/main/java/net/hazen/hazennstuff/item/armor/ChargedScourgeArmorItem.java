@@ -1,6 +1,7 @@
 package net.hazen.hazennstuff.item.armor;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import mod.azure.azurelib.common.api.common.animatable.GeoItem;
 import net.hazen.hazennstuff.effect.HnSEffects;
@@ -12,7 +13,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class ChargedScourgeArmorItem extends ImbuableHnSArmorItem implements GeoItem {
+public class ChargedScourgeArmorItem extends ImbuableHnSArmorItem implements IDisableJacket {
     public ChargedScourgeArmorItem(ArmorItem.Type type, Properties settings) {
     super(HnSArmorMaterials.CHARGED_SCOURGE_MATERIAL, type, settings,
             new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),

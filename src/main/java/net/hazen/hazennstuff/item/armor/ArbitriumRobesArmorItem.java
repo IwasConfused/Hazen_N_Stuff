@@ -15,7 +15,7 @@ import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class ArbitriumRobesArmorItem extends ImbuableHnSArmorItem implements GeoItem, IDisableJacket {
+public class ArbitriumRobesArmorItem extends ImbuableHnSArmorItem implements IDisableJacket {
     public ArbitriumRobesArmorItem(ArmorItem.Type type, Properties settings) {
         super(HnSArmorMaterials.ARBITER_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),

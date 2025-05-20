@@ -1,6 +1,7 @@
 package net.hazen.hazennstuff.item.armor;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import mod.azure.azurelib.common.api.common.animatable.GeoItem;
 import net.hazen.hazennstuff.effect.HnSEffects;
@@ -18,7 +19,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.function.Consumer;
 
-public class DarkRitualTemplarArmorItem extends ImbuableHnSArmorItem implements GeoItem {
+public class DarkRitualTemplarArmorItem extends ImbuableHnSArmorItem implements IDisableJacket {
     public DarkRitualTemplarArmorItem(ArmorItem.Type type, Properties settings) {
         super(HnSArmorMaterials.DARK_RITUAL_TEMPLAR_MATERIAL, type, settings,
                 new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),

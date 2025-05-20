@@ -4,12 +4,7 @@ import com.google.common.base.Suppliers;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import mod.azure.azurelib.common.api.common.animatable.GeoItem;
-import mod.azure.azurelib.common.internal.client.RenderProvider;
 import mod.azure.azurelib.common.internal.common.util.AzureLibUtil;
-import mod.azure.azurelib.core.animatable.instance.AnimatableInstanceCache;
-import mod.azure.azurelib.core.animation.AnimatableManager;
-import mod.azure.azurelib.core.animation.AnimationController;
-import mod.azure.azurelib.core.animation.RawAnimation;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -23,8 +18,7 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class HnSArmorItem extends ArmorItem implements GeoItem {
-    private final AnimatableInstanceCache cache = AzureLibUtil.createInstanceCache(this);
+public class HnSArmorItem extends ArmorItem {
     private final Supplier<ItemAttributeModifiers> defaultModifiers;
 
     public HnSArmorItem(Holder<ArmorMaterial> material, Type type, Properties properties, AttributeContainer... attributeContainers) {
@@ -75,24 +69,5 @@ public class HnSArmorItem extends ArmorItem implements GeoItem {
     @Override
     public ItemAttributeModifiers getDefaultAttributeModifiers() {
         return this.defaultModifiers.get();
-    }
-
-    // AzureLib
-    @Override
-    public void createRenderer(Consumer<RenderProvider> consumer) {
-        // Can I just leave this empty?
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "controler", 0, event ->
-        {
-            return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
-        }));
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
     }
 }

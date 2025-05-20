@@ -130,8 +130,6 @@ public class HazenNStuff
     }
 
     {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
         {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
