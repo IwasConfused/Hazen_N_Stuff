@@ -4,12 +4,8 @@ import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
-import mod.azure.azurelib.common.internal.common.util.AzureLibUtil;
-import mod.azure.azurelib.core.animation.*;
-import mod.azure.azurelib.core.object.PlayState;
-import net.hazen.hazennstuff.effect.HnSEffects;
+import net.hazen.hazennstuff.registries.HnSEffects;
 import net.hazen.hazennstuff.entity.armor.Geckolib.ArbitriumRobesGeckolibArmorModel;
-import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibChargedScourgeArmorModel;
 import net.hazen.hazennstuff.item.armor.HnSArmorMaterials;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -24,6 +20,7 @@ import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
@@ -75,10 +72,37 @@ public class ArbitriumRobesGeckolibArmorItem extends ImbuableGeckolibHnSArmorIte
         return ElytraItem.isFlyEnabled(stack);
     }
 
-    // Azurelib
+    // Googoo Gaa gaa Lib
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
     }
 
+    // Animated armor based on conditions
+    // Thank you Noah for showing me how to do this all those months back <3
+    @OnlyIn(Dist.CLIENT)
+    private PlayState wings(AnimationState animationState)
+    {
+        Player player = Minecraft.getInstance().player;
+
+        // Flight
+        if (player != null && (player.getAbilities().flying || player.isFallFlying() && !player.onGround()))
+        {
+            //System.out.println("Flight");
+            animationState.getController().setAnimation(RawAnimation.begin().then("flying", Animation.LoopType.LOOP));
+        }
+        // Idle
+        else if (player != null && !(player.getAbilities().flying || player.isFallFlying() && player.onGround()))
+        {
+            //System.out.println("Idle");
+            animationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
+        }
+
+        return PlayState.CONTINUE;
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<>(this, "ignis_armor_winged", 10, this::wings));
+    }
 }

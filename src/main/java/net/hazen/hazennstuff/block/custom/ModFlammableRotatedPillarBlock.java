@@ -1,6 +1,6 @@
 package net.hazen.hazennstuff.block.custom;
 
-import net.hazen.hazennstuff.block.HnSBlocks;
+import net.hazen.hazennstuff.registries.HnSItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.AxeItem;
@@ -36,12 +36,12 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context,
                                                      ItemAbility itemAbility, boolean simulate) {
         if(context.getItemInHand().getItem() instanceof AxeItem) {
-            if(state.is(HnSBlocks.WISEWOOD_LOG)) {
-                return HnSBlocks.STRIPPED_WISEWOOD_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if(state.is(HnSItems.HnSBlocks.WISEWOOD_LOG)) {
+                return HnSItems.HnSBlocks.STRIPPED_WISEWOOD_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
 
-            if(state.is(HnSBlocks.WISEWOOD_WOOD)) {
-                return HnSBlocks.STRIPPED_WISEWOOD_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            if(state.is(HnSItems.HnSBlocks.WISEWOOD_WOOD)) {
+                return HnSItems.HnSBlocks.STRIPPED_WISEWOOD_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
         }
 

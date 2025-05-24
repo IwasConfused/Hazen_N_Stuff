@@ -3,8 +3,10 @@ package net.hazen.hazennstuff.item.armor;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.armor.IDisableJacket;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
-import mod.azure.azurelib.common.api.common.animatable.GeoItem;
-import net.hazen.hazennstuff.effect.HnSEffects;
+import net.hazen.hazennstuff.registries.HnSEffects;
+import net.hazen.hazennstuff.item.custom.HnSArmorDispatcher;
+import net.hazen.hazennstuff.registries.HnSItems;
+import net.hazen.hazennstuff.registries.HnSTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,13 +16,23 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.network.chat.Component;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.world.item.TooltipFlag;
+
+import java.util.List;
 
 public class ArbitriumRobesArmorItem extends ImbuableHnSArmorItem implements IDisableJacket {
-    public ArbitriumRobesArmorItem(ArmorItem.Type type, Properties settings) {
+    // This is your class where you will setup the AzCommands/Animations you wish to play
+    public final HnSArmorDispatcher dispatcher;
+
+    public ArbitriumRobesArmorItem(Type type, Properties settings) {
         super(HnSArmorMaterials.ARBITER_MATERIAL, type, settings,
-                new AttributeContainer(AttributeRegistry.MAX_MANA, 150.0, AttributeModifier.Operation.ADD_VALUE),
+                new AttributeContainer(AttributeRegistry.MAX_MANA, 500.0, AttributeModifier.Operation.ADD_VALUE),
                 new AttributeContainer(AttributeRegistry.SPELL_POWER, .25, AttributeModifier.Operation.ADD_VALUE)
         );
+        // Create the instance of the class here to use later.
+        this.dispatcher = new HnSArmorDispatcher();
     }
 
 
@@ -28,6 +40,22 @@ public class ArbitriumRobesArmorItem extends ImbuableHnSArmorItem implements IDi
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
         if (entity instanceof Player player && !level.isClientSide() && isWearingFullSet(player)) {
             evaluateArmorEffects(player);
+        }
+        if (!level.isClientSide && entity instanceof Player player ) {
+            player.getArmorSlots().forEach(wornArmor -> {
+                if (wornArmor != null && wornArmor.is(HnSItems.ARBITRIUM_ROBES_HELMET)) {
+                    dispatcher.idle(player, wornArmor);
+                }
+                if (wornArmor != null && wornArmor.is(HnSItems.ARBITRIUM_ROBES_CHESTPLATE)) {
+                    dispatcher.idle(player, wornArmor);
+                }
+                if (wornArmor != null && wornArmor.is(HnSItems.ARBITRIUM_ROBES_LEGGINGS)) {
+                    dispatcher.idle(player, wornArmor);
+                }
+                if (wornArmor != null && wornArmor.is(HnSItems.ARBITRIUM_ROBES_BOOTS)) {
+                    dispatcher.idle(player, wornArmor);
+                }
+            });
         }
     }
 
@@ -44,13 +72,35 @@ public class ArbitriumRobesArmorItem extends ImbuableHnSArmorItem implements IDi
                 player.getItemBySlot(ArmorItem.Type.BOOTS.getSlot()).getItem() instanceof ArbitriumRobesArmorItem;
     }
 
-    @Override
-    public boolean elytraFlightTick(ItemStack stack, LivingEntity entity, int flightTicks) {
-        return true;
-    }
+    //@Override
+    //public boolean elytraFlightTick(ItemStack stack, LivingEntity entity, int flightTicks) {
+        //if (!entity.level().isClientSide && entity instanceof Player player )
+        //{
+                //player.getArmorSlots().forEach(wornArmor -> {
+                    // Doing this through tags rather than listing everything in an or condition
+                    //if (wornArmor != null && wornArmor.is(HnSTags.ARMORS_FOR_IDLE)) {
+                        //dispatcher.idle(player, wornArmor);
+                    //}
+                    //if (wornArmor != null && wornArmor.is(HnSTags.ARMORS_FOR_FLIGHT) && player.isFallFlying()) {
+                        //dispatcher.flight(player, wornArmor);
+                    //}
+                //});
+       // }
+       // return true;
+    //}
 
+    //   if (!level.isClientSide && entity instanceof Player player ) {
     @Override
     public boolean canElytraFly(ItemStack stack, LivingEntity entity) {
         return ElytraItem.isFlyEnabled(stack);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        if(Screen.hasShiftDown()) {
+            tooltipComponents.add(Component.translatable("tooltip.hazennstuff.chisel.shift_down"));
+        }
+
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }

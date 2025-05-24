@@ -36,7 +36,6 @@ public class FleshMassArmorRenderer extends AzArmorRenderer {
         super(
                 AzArmorRendererConfig.builder(GEO, TEX)
                         .setAnimatorProvider(FleshMassAnimator::new)
-                        .addRenderLayer(new AzAutoGlowingLayer<>())
                         .build()
         );
     }

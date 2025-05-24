@@ -3,7 +3,7 @@ package net.hazen.hazennstuff.item.armor.Geckolib;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
-import net.hazen.hazennstuff.effect.HnSEffects;
+import net.hazen.hazennstuff.registries.HnSEffects;
 import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibChargedScourgeArmorModel;
 import net.hazen.hazennstuff.item.armor.HnSArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -15,9 +15,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import software.bernie.geckolib.animation.AnimationState;
-import software.bernie.geckolib.animation.PlayState;
-import software.bernie.geckolib.animation.RawAnimation;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 public class GeckolibChargedScourgeArmorItem extends ImbuableGeckolibHnSArmorItem {

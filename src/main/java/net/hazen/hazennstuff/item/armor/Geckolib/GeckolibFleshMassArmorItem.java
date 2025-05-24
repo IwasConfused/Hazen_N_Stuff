@@ -3,7 +3,7 @@ package net.hazen.hazennstuff.item.armor.Geckolib;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
-import net.hazen.hazennstuff.effect.HnSEffects;
+import net.hazen.hazennstuff.registries.HnSEffects;
 import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibFleshMassArmorModel;
 import net.hazen.hazennstuff.item.armor.HnSArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;

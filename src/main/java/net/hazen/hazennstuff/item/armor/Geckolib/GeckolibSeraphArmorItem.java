@@ -4,7 +4,7 @@ import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
 import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
-import net.hazen.hazennstuff.effect.HnSEffects;
+import net.hazen.hazennstuff.registries.HnSEffects;
 import net.hazen.hazennstuff.entity.armor.Geckolib.GeckolibSeraphArmorModel;
 import net.hazen.hazennstuff.item.armor.HnSArmorMaterials;
 import net.minecraft.world.effect.MobEffectInstance;

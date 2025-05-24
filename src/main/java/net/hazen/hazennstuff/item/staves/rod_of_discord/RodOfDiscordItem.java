@@ -2,16 +2,13 @@ package net.hazen.hazennstuff.item.staves.rod_of_discord;
 
 import io.redspace.ironsspellbooks.api.item.weapons.ExtendedSwordItem;
 import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
-import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.hazennstuff.entity.render.item.staves.RodOfDiscordRenderer;
-import net.hazen.hazennstuff.entity.render.item.staves.WisewoodCaneRenderer;
 import net.hazen.hazennstuff.item.staves.HnSStaffTier;
 import net.hazen.hazennstuff.item.staves.ImbuableStaffItem;
 import net.hazen.hazennstuff.render.EnderRarity;
-import net.hazen.hazennstuff.spells.SpellRegistries;
+import net.hazen.hazennstuff.registries.SpellRegistries;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
-import net.minecraft.world.item.Rarity;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.client.GeoRenderProvider;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;

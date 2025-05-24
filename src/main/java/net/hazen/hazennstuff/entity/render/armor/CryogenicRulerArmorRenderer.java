@@ -37,7 +37,6 @@ public class CryogenicRulerArmorRenderer extends AzArmorRenderer {
         super(
                 AzArmorRendererConfig.builder(GEO, TEX)
                         .setAnimatorProvider(CryogenicRulerAnimator::new)
-                        .addRenderLayer(new AzAutoGlowingLayer<>())
                         .build()
         );
     }

@@ -1,10 +1,8 @@
 package net.hazen.hazennstuff.item.armor;
 
-import io.redspace.ironsspellbooks.IronsSpellbooks;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.hazen.hazennstuff.HazenNStuff;
-import net.hazen.hazennstuff.item.item.HnSItems;
-import net.hazen.hazennstuff.sound.HnSSounds;
+import net.hazen.hazennstuff.registries.HnSSounds;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -12,7 +10,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.bus.api.IEventBus;
@@ -157,6 +154,30 @@ public class HnSArmorMaterials {
             pureArmorMap(),
             40,
             HnSSounds.SERAPH_EQUIP,
+            () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
+            2,
+            0.1F);
+
+    public static DeferredHolder<ArmorMaterial, ArmorMaterial> CALAMITAS_MATERIAL = register("calamitas",
+            pureArmorMap(),
+            40,
+            HnSSounds.SOUL_FLAME_EQUIP,
+            () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
+            2,
+            0.1F);
+
+    public static DeferredHolder<ArmorMaterial, ArmorMaterial> MAVERICK_MATERIAL = register("maverick",
+            pureArmorMap(),
+            40,
+            SoundEvents.ARMOR_EQUIP_LEATHER,
+            () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
+            2,
+            0.1F);
+
+    public static DeferredHolder<ArmorMaterial, ArmorMaterial> SLC_CAT_MATERIAL = register("slc_cat",
+            pureArmorMap(),
+            40,
+            SoundEvents.ARMOR_EQUIP_LEATHER,
             () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get()),
             2,
             0.1F);

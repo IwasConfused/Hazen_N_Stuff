@@ -12,7 +12,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import net.hazen.hazennstuff.item.item.HnSItems;
+import net.hazen.hazennstuff.registries.HnSItems;
 import java.util.function.Supplier;
 
 public class HNSExtendedWeaponsTiers implements Tier, IronsWeaponTier {
@@ -117,6 +117,20 @@ public class HNSExtendedWeaponsTiers implements Tier, IronsWeaponTier {
             new AttributeContainer(ALObjects.Attributes.ARMOR_PIERCE, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
             new AttributeContainer(AttributeRegistry.ENDER_SPELL_POWER, .05, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
             new AttributeContainer(Attributes.ATTACK_SPEED, 0.8, AttributeModifier.Operation.ADD_VALUE)
+    );
+
+
+    public static HNSExtendedWeaponsTiers HAMMER_OF_JUSTICE = new HNSExtendedWeaponsTiers(
+            8064,
+            9,
+            -3.0F,
+            10,
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            () -> Ingredient.of(HnSItems.ZENALITE_INGOT.get()),
+            new AttributeContainer(ALObjects.Attributes.PROT_PIERCE, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(ALObjects.Attributes.ARMOR_PIERCE, .1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(AttributeRegistry.HOLY_SPELL_POWER, .15, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+            new AttributeContainer(Attributes.ATTACK_SPEED, -0.3, AttributeModifier.Operation.ADD_VALUE)
     );
 
     //private final int level;
