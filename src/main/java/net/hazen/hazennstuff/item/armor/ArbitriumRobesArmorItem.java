@@ -38,24 +38,23 @@ public class ArbitriumRobesArmorItem extends ImbuableHnSArmorItem implements IDi
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        if (entity instanceof Player player && !level.isClientSide() && isWearingFullSet(player)) {
-            evaluateArmorEffects(player);
-        }
-        if (!level.isClientSide && entity instanceof Player player ) {
-            player.getArmorSlots().forEach(wornArmor -> {
-                if (wornArmor != null && wornArmor.is(HnSItems.ARBITRIUM_ROBES_HELMET)) {
-                    dispatcher.idle(player, wornArmor);
+        if (!(entity instanceof Player player) || level.isClientSide) return;
+
+        boolean isFlying = player.isFallFlying();
+
+        player.getArmorSlots().forEach(wornArmor -> {
+            if (wornArmor != null && wornArmor.getItem() instanceof ArbitriumRobesArmorItem) {
+                if (isFlying) {
+                    dispatcher.flight(player, wornArmor);  // Play flight animation
+                } else {
+                    dispatcher.idle(player, wornArmor);   // Play idle animation
                 }
-                if (wornArmor != null && wornArmor.is(HnSItems.ARBITRIUM_ROBES_CHESTPLATE)) {
-                    dispatcher.idle(player, wornArmor);
-                }
-                if (wornArmor != null && wornArmor.is(HnSItems.ARBITRIUM_ROBES_LEGGINGS)) {
-                    dispatcher.idle(player, wornArmor);
-                }
-                if (wornArmor != null && wornArmor.is(HnSItems.ARBITRIUM_ROBES_BOOTS)) {
-                    dispatcher.idle(player, wornArmor);
-                }
-            });
+            }
+        });
+
+        // Armor effect logic
+        if (isWearingFullSet(player) && !player.hasEffect(HnSEffects.ARBITER_EFFECT)) {
+            player.addEffect(new MobEffectInstance(HnSEffects.ARBITER_EFFECT, 200, 0, false, false, false));
         }
     }
 
@@ -90,17 +89,14 @@ public class ArbitriumRobesArmorItem extends ImbuableHnSArmorItem implements IDi
     //}
 
     //   if (!level.isClientSide && entity instanceof Player player ) {
+
     @Override
     public boolean canElytraFly(ItemStack stack, LivingEntity entity) {
-        return ElytraItem.isFlyEnabled(stack);
+        return true;
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        if(Screen.hasShiftDown()) {
-            tooltipComponents.add(Component.translatable("tooltip.hazennstuff.chisel.shift_down"));
-        }
-
-        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+    public boolean elytraFlightTick(ItemStack stack, LivingEntity entity, int flightTicks) {
+        return true; // Needed to allow flight ticking
     }
 }

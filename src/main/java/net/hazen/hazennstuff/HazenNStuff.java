@@ -53,7 +53,7 @@ public class HazenNStuff
 
         HnSEffects.register(modEventBus);
         HnSSounds.register(modEventBus);
-
+        HnSEntityRegistry.register(modEventBus);
         SpellRegistries.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);

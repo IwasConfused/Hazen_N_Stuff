@@ -2,6 +2,7 @@ package net.hazen.hazennstuff.spells.fire;
 
 import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
+import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
 import io.redspace.ironsspellbooks.api.spells.*;
 import io.redspace.ironsspellbooks.api.util.Utils;
@@ -32,7 +33,7 @@ public class BrimstoneHellblastSpell extends AbstractSpell {
     }
 
     private final DefaultConfig defaultConfig = new DefaultConfig()
-            .setMinRarity(SpellRarity.RARE)
+            .setMinRarity(SpellRarity.LEGENDARY)
             .setSchoolResource(SchoolRegistry.FIRE_RESOURCE)
             .setMaxLevel(5)
             .setCooldownSeconds(25)
@@ -42,7 +43,7 @@ public class BrimstoneHellblastSpell extends AbstractSpell {
         this.manaCostPerLevel = 15;
         this.baseSpellPower = 1;
         this.spellPowerPerLevel = 1;
-        this.castTime = 40;
+        this.castTime = 30;
         this.baseManaCost = 60;
     }
 
@@ -73,7 +74,6 @@ public class BrimstoneHellblastSpell extends AbstractSpell {
         BrimstoneHellblast brimstoneHellblast = new BrimstoneHellblast(world, entity);
 
         brimstoneHellblast.setDamage(getDamage(spellLevel, entity));
-        brimstoneHellblast.setExplosionRadius(getRadius(spellLevel, entity));
 
         brimstoneHellblast.setPos(origin.add(entity.getForward()).subtract(0, brimstoneHellblast.getBbHeight() / 2, 0));
         brimstoneHellblast.shoot(entity.getLookAngle());
@@ -82,9 +82,23 @@ public class BrimstoneHellblastSpell extends AbstractSpell {
         super.onCast(world, spellLevel, entity, castSource, playerMagicData);
     }
 
+
     public float getDamage(int spellLevel, LivingEntity caster) {
-        return 5 + 5 * getSpellPower(spellLevel, caster);
+        if (caster == null) {
+            return (float) getSpellPower(spellLevel, null) * 7;
+        }
+
+        double firePower = caster.getAttributeValue(AttributeRegistry.FIRE_SPELL_POWER);
+        double bloodPower = caster.getAttributeValue(AttributeRegistry.BLOOD_SPELL_POWER);
+        double generalPower = caster.getAttributeValue(AttributeRegistry.SPELL_POWER);
+
+        float damage = 8 + 5 * (float)(firePower + bloodPower + generalPower);
+        return damage;
     }
+
+    //public float getDamage(int spellLevel, LivingEntity caster) {
+        //return 5 + 5 * getSpellPower(spellLevel, caster);
+    //}
 
     public int getRadius(int spellLevel, LivingEntity caster) {
         return 2 + (int) getSpellPower(spellLevel, caster);

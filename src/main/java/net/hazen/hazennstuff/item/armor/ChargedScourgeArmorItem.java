@@ -30,31 +30,29 @@ public class ChargedScourgeArmorItem extends ImbuableHnSArmorItem implements IDi
 
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
-        if (entity instanceof Player player && !level.isClientSide() && isWearingFullSet(player)) {
-            evaluateArmorEffects(player);
+        if (!(entity instanceof Player player) || level.isClientSide) return;
+
+        player.getArmorSlots().forEach(wornArmor -> {
+            if (wornArmor != null && wornArmor.getItem() instanceof ArbitriumRobesArmorItem) {
+                dispatcher.idle(player, wornArmor); // Always play idle animation
+            }
+        });
+
+        // Armor effect logic
+        if (isWearingFullSet(player) && !player.hasEffect(HnSEffects.ARBITER_EFFECT)) {
+            player.addEffect(new MobEffectInstance(HnSEffects.ARBITER_EFFECT, 200, 0, false, false, false));
         }
-        if (!level.isClientSide && entity instanceof Player player ) {
-            player.getArmorSlots().forEach(wornArmor -> {
-                if (wornArmor != null && wornArmor.is(HnSItems.CHARGED_SCOURGE_HELMET)) {
-                    dispatcher.idle(player, wornArmor);
-                }
-                if (wornArmor != null && wornArmor.is(HnSItems.CHARGED_SCOURGE_CHESTPLATE)) {
-                    dispatcher.idle(player, wornArmor);
-                }
-                if (wornArmor != null && wornArmor.is(HnSItems.CHARGED_SCOURGE_LEGGINGS)) {
-                    dispatcher.idle(player, wornArmor);
-                }
-                if (wornArmor != null && wornArmor.is(HnSItems.CHARGED_SCOURGE_BOOTS)) {
-                    dispatcher.idle(player, wornArmor);
-                }
-            });
+
+
+        // Armor effect logic
+        if (isWearingFullSet(player) && !player.hasEffect(HnSEffects.BURNING_POINT_EFFECT)) {
+            player.addEffect(new MobEffectInstance(HnSEffects.BURNING_POINT_EFFECT, 200, 0, false, false, false));
         }
     }
 
-
     private void evaluateArmorEffects(Player player) {
-        if (!player.hasEffect(HnSEffects.SCOURGES_GORGE_EFFECT)) {
-            player.addEffect(new MobEffectInstance(HnSEffects.SCOURGES_GORGE_EFFECT, 200, 0, false, false, false));
+        if (!player.hasEffect(HnSEffects.BURNING_POINT_EFFECT)) {
+            player.addEffect(new MobEffectInstance(HnSEffects.BURNING_POINT_EFFECT, 200, 0, false, false, false));
         }
     }
 

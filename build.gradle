@@ -219,4 +219,6 @@ idea {
         downloadSources = true
         downloadJavadoc = true
     }
+    // In build.gradle:
+// This block is where your mappings version is also specified
 }

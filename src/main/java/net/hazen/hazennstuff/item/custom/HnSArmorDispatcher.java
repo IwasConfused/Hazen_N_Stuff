@@ -31,6 +31,7 @@ public class HnSArmorDispatcher {
             AzPlayBehaviors.LOOP
     );
 
+
     private static final AzCommand CASTING_SPELL_COMMAND = AzCommand.create(
             "base_controller",
             "casting",
@@ -48,17 +49,25 @@ public class HnSArmorDispatcher {
     }
 
     public void idle(Entity entity, ItemStack itemStack) {
+
         IDLE_COMMAND.sendForItem(entity, itemStack);
     }
 
     public void flight(Entity entity, ItemStack itemStack) {
+
         ELYTRA_FLIGHT_COMMAND.sendForItem(entity, itemStack);
     }
 
     public void casting(Entity entity, ItemStack itemStack) {
+
         CASTING_SPELL_COMMAND.sendForItem(entity, itemStack);
     }
 
-    public void overhead_two_handed_swing(Entity entity, ItemStack itemStack) { DIVINE_SMITE_COMMAND.sendForItem(entity, itemStack);
+    public void walk(Entity entity, ItemStack itemStack) {
+        WALK_COMMAND.sendForItem(entity, itemStack);
+    }
+
+    public void overhead_two_handed_swing(Entity entity, ItemStack itemStack) {
+        DIVINE_SMITE_COMMAND.sendForItem(entity, itemStack);
     }
 }
