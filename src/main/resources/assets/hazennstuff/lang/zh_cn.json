@@ -43,9 +43,9 @@
 
   "block.hazennstuff.zenalite_bricks": "神泽砖块",
   "block.hazennstuff.zenalite_stairs": "神泽楼梯",
-  "block.hazennstuff.zenalite_slab": "深泽台阶",
+  "block.hazennstuff.zenalite_slab": "神泽台阶",
 
-  "block.hazennstuff.zenalite_block": "深泽块",
+  "block.hazennstuff.zenalite_block": "神泽块",
   "block.hazennstuff.mithril_block": "秘银块",
   "block.hazennstuff.pyrium_block": "炽金块",
   "block.hazennstuff.arcane_steel_block": "奥术钢块",
@@ -278,8 +278,8 @@
 
 
 
-  "creativetab.hazennstuff.hazennstuff_materials": "Hazen 'n Stuff材料",
-  "creativetab.hazennstuff.hazennstuff_blocks": "Hazen 'n Stuff方块",
-  "creativetab.hazennstuff.hazennstuff_utility": "Hazen 'n Stuff实用",
-  "creativetab.hazennstuff.hazennstuff_equipment": "Hazen 'n Stuff装备"
+  "creativetab.hazennstuff.hazennstuff_materials": "Hazen 'n Stuff 材料",
+  "creativetab.hazennstuff.hazennstuff_blocks": "Hazen 'n Stuff 方块",
+  "creativetab.hazennstuff.hazennstuff_utility": "Hazen 'n Stuff 实用",
+  "creativetab.hazennstuff.hazennstuff_equipment": "Hazen 'n Stuff 装备"
 }
