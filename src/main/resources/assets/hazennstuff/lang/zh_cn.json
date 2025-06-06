@@ -31,7 +31,7 @@
   "block.hazennstuff.zenalite_abysslate_ore": "深渊神泽矿石",
   "block.hazennstuff.zenalite_voidstone_ore": "虚空神泽矿石",
 
-  "block.hazennstuff.runestone_slag": "符文石熔渣",
+  "block.hazennstuff.runestone_slag": "符文石渣",
   "block.hazennstuff.aquastone": "海洋石",
 
   "block.hazennstuff.fireblossom": "火焰花",
@@ -48,7 +48,7 @@
   "block.hazennstuff.zenalite_block": "神泽块",
   "block.hazennstuff.mithril_block": "秘银块",
   "block.hazennstuff.pyrium_block": "炽金块",
-  "block.hazennstuff.arcane_steel_block": "奥术钢块",
+  "block.hazennstuff.arcane_steel_block": "奥术块",
 
   "block.hazennstuff.wisewood_planks": "智慧木板",
   "block.hazennstuff.wisewood_door": "智慧木门",
@@ -119,7 +119,7 @@
   "item.hazennstuff.geckolib_flesh_mass_leggings": "血肉护腿",
   "item.hazennstuff.geckolib_flesh_mass_boots": "血肉靴子",
 
-  "item.hazennstuff.geckolib_dark_ritual_templar_helmet": "某个女人的头发",
+  "item.hazennstuff.geckolib_dark_ritual_templar_helmet": "女性的头发",
   "item.hazennstuff.geckolib_dark_ritual_templar_chestplate": "暗祭圣殿骑士胸甲",
   "item.hazennstuff.geckolib_dark_ritual_templar_leggings": "暗祭圣殿骑士护腿",
   "item.hazennstuff.geckolib_dark_ritual_templar_boots": "暗祭圣殿骑士靴子",
@@ -252,14 +252,14 @@
 
 
 
-  "effect.hazennstuff.tyrants_grace": "僭主之恩",
+  "effect.hazennstuff.tyrants_grace": "僭主施恩",
   "effect.hazennstuff.scourges_gorge": "灾祸饕餮",
   "effect.hazennstuff.call_of_the_garden": "苍园之唤",
   "effect.hazennstuff.seraphs_might": "炽天使之势",
   "effect.hazennstuff.sadistic_nature": "嗜虐天性",
-  "effect.hazennstuff.burning_point": "燃点",
-  "effect.hazennstuff.butchers_vanity": "屠户的虚荣",
-  "effect.hazennstuff.sub_zero": "零度之下",
+  "effect.hazennstuff.burning_point": "炽燃触点",
+  "effect.hazennstuff.butchers_vanity": "屠者虚荣",
+  "effect.hazennstuff.sub_zero": "零下冰点",
   "effect.hazennstuff.grand_ender_dragon": "末影巨龙",
   "effect.hazennstuff.fireblossom": "烈焰芳华",
   "effect.hazennstuff.arbiter": "仲裁者",
@@ -267,13 +267,13 @@
 
 
   "sounds.hazennstuff.soul_flame_equip": "装备魂焰盔甲",
-  "sounds.hazennstuff.charged_scourge_equip": "充能灾祸盔甲",
-  "sounds.hazennstuff.creaking_sorcerer_equip": "嘎枝术士盔甲",
-  "sounds.hazennstuff.seraph_equip": "炽天使盔甲",
-  "sounds.hazennstuff.supreme_witch_equip": "至高女巫盔甲",
-  "sounds.hazennstuff.cryogenic_ruler_equip": "冰寒主宰盔甲",
-  "sounds.hazennstuff.flesh_mass_equip": "血肉盔甲",
-  "sounds.hazennstuff.ender_dragon_equip": "末影龙盔甲",
+  "sounds.hazennstuff.charged_scourge_equip": "装备充能灾祸盔甲",
+  "sounds.hazennstuff.creaking_sorcerer_equip": "装备嘎枝术士盔甲",
+  "sounds.hazennstuff.seraph_equip": "装备炽天使盔甲",
+  "sounds.hazennstuff.supreme_witch_equip": "装备至高女巫盔甲",
+  "sounds.hazennstuff.cryogenic_ruler_equip": "装备冰寒主宰盔甲",
+  "sounds.hazennstuff.flesh_mass_equip": "装备血肉盔甲",
+  "sounds.hazennstuff.ender_dragon_equip": "装备末影龙盔甲",
   "sounds.hazennstuff.chaotic_teleport": "？？？",
 
 
